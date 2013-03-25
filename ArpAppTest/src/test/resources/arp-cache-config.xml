@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE cache-config SYSTEM "cache-config.dtd">
+
+<cache-config>
+	<caching-scheme-mapping>
+		<cache-mapping>
+			<cache-name>*</cache-name>
+			<scheme-name>eclipselink-distributed-gridcache</scheme-name>
+		</cache-mapping>
+	</caching-scheme-mapping>
+	<caching-schemes>
+		<distributed-scheme>
+			<scheme-name>eclipselink-distributed-gridcache</scheme-name>
+			<service-name>EclipseLinkJPAGridCache</service-name>
+			<!-- Configure a wrapper serializer to support serialization of relationships. -->
+			<serializer id="arp-pof">
+			      <class-name>com.tangosol.io.pof.ConfigurablePofContext</class-name>
+			      <init-params>
+			         <init-param>
+			            <param-type>String</param-type>
+			            <param-value>arp-consol-pof-config.xml</param-value>
+			         </init-param>
+			      </init-params>
+			</serializer>
+			<backing-map-scheme>
+				<local-scheme>
+					<scheme-ref>unlimited-backing-map</scheme-ref>
+				</local-scheme>
+			</backing-map-scheme>
+			<autostart>true</autostart>
+			<backup-count>0</backup-count>
+		</distributed-scheme>
+		<local-scheme>
+			<scheme-name>unlimited-backing-map</scheme-name>
+		</local-scheme>
+	</caching-schemes>
+</cache-config>

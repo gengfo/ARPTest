@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!--
+    <import resource="../service/service-main.xml"/>
+    -->
+    
+    <bean id="authorityController"
+     class="com.oocl.ir4.arp.web.common.controller.AuthorityController">
+        <property name="authorityOpenService" ref="authorityOpenService"/>
+    </bean>
+    
+    <bean id="tirPowerSearchController"
+    	class="com.oocl.ir4.arp.web.tir.controller.TIRPowerSearchController">
+    	<property name="tirOpenService" ref="tirOpenService" />
+    </bean>
+    
+    <bean id="auditTrailController"
+    	class="com.oocl.ir4.arp.web.audit.controller.AuditTrailController">
+    	<property name="auditTrailOpenService" ref="auditTrailOpenService" />
+    </bean>    
+    
+    <bean id="mockUiController"
+    	class="com.oocl.ir4.arp.web.mockui.controller.MockUiController">
+    	<property name="mockUiOpenService" ref="mockUiOpenService" />
+    </bean>
+    
+    <bean id="CoverageController" class="com.oocl.frm.js.coverage.ConverageController">
+    </bean>
+    
+</beans>

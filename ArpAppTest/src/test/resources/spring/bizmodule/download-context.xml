@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="invoiceObjectComposer" class="com.oocl.ir4.arp.web.common.download.composer.InvoiceObjectComposer">
+	</bean>
+	
+	<bean id="paymentObjectComposer" class="com.oocl.ir4.arp.web.common.download.composer.PaymentObjectComposer">
+	</bean>
+	
+	<bean id="spInvoiceObjectComposer" class="com.oocl.ir4.arp.web.common.download.composer.SPInvoiceObjectComposer">
+	</bean>
+	
+	<bean id="paymentInstructionObjectComposer" class="com.oocl.ir4.arp.web.common.download.composer.PaymentInstructionObjectComposer">
+	</bean>
+	
+	<bean id="rejectEDIInvoiceObjectComposer" class="com.oocl.ir4.arp.web.common.download.composer.RejectEDIInvoiceObjectComposer">
+	</bean>
+	
+
+	
+	<bean id="ediSummaryComposer" class="com.oocl.ir4.arp.web.common.download.composer.EDISummaryComposer">
+		<property name="ediHistoryOpenService" ref="ediHistoryOpenService" />
+	</bean>
+	
+	<bean id="invoiceMatchingReportComposer" class="com.oocl.ir4.arp.web.common.download.composer.InvoiceMatchingReportComposer">
+		<property name="invoiceMatchingOpenService" ref="invoiceMatchingOpenService" />
+	</bean>
+	<bean id="invoiceChargeObjectComposer" class="com.oocl.ir4.arp.web.common.download.composer.InvoiceChargeObjectComposer">
+	</bean>
+	<bean id="invoiceChargeObjectProvider" class="com.oocl.ir4.arp.web.common.download.provider.InvocieChargeListTableContentProvider"/>
+	<bean id="invoiceObjectProvider" class="com.oocl.ir4.arp.web.common.download.provider.InvoiceObjectListTableContentProvider"/>
+	<bean id="paymentObjectProvider" class="com.oocl.ir4.arp.web.common.download.provider.PaymentObjectListTableContentProvider">
+		<property name="suppDataService" ref="suppDataService"/>
+	</bean>
+	
+	<bean id="paymentInstructionObjectProvider" class="com.oocl.ir4.arp.web.common.download.provider.PaymentInstructionObjectListTableContentProvider">
+	</bean>
+	
+	<bean id="twnPaymentObjectProvider" class="com.oocl.ir4.arp.web.common.download.provider.TWNPaymentObjectListTableContentProvider">
+		<property name="suppDataService" ref="suppDataService"/>
+	</bean>
+	
+	<bean id="spInvoiceObjectProvider" class="com.oocl.ir4.arp.web.common.download.provider.SPInvoiceObjectListTableContentProvider">
+	</bean>
+	<bean id="rejectEDIInvoiceObjectProvider" class="com.oocl.ir4.arp.web.common.download.provider.RejectEDIInvoiceObjectListTableContentProvider">
+	</bean>
+	<bean id="dataBaseProvider" class="com.oocl.ir4.arp.frm.util.report.impl.formatter.DatabaseRecordTableContentProvider"/>
+	<bean id="reportProvider" class="com.oocl.ir4.arp.frm.util.report.impl.formatter.report.ReportTableContentProvider"/>
+
+	<bean id="ediSummaryProvider" class="com.oocl.ir4.arp.web.common.download.provider.EDISummaryProvider"/>
+	
+	<bean id="invoiceTransactionSummaryComposer" class="com.oocl.ir4.arp.web.common.download.composer.InvoiceTransactionSummaryComposer">
+		<property name="transactionSummaryOpenService" ref="transactionSummaryOpenService" />
+		<property name="transactionSummaryDao" ref="transactionSummaryDao" />
+	</bean>
+	
+	<bean id="invoiceTransactionSummaryProvider" class="com.oocl.ir4.arp.web.common.download.provider.InvoiceTransactionSummaryProvider">
+		<property name="transactionSummaryOpenService" ref="transactionSummaryOpenService" />
+		<property name="transactionSummaryDao" ref="transactionSummaryDao" />
+		
+	</bean>
+	
+	<bean id="cndnTransactionSummaryProvider" class="com.oocl.ir4.arp.web.common.download.provider.CNDNTransactionSummaryProvider">
+		<property name="transactionSummaryOpenService" ref="transactionSummaryOpenService" />
+		<property name="transactionSummaryDao" ref="transactionSummaryDao" />
+		
+	</bean>
+	
+	<bean id="invoiceAdjustmentTransactionSummaryComposer" class="com.oocl.ir4.arp.web.common.download.composer.InvoiceAdjustmentTransactionSummaryComposer">
+		<property name="transactionSummaryOpenService" ref="transactionSummaryOpenService" />
+		<property name="transactionSummaryDao" ref="transactionSummaryDao" />
+	</bean>
+	
+	<bean id="invoiceAdjustmentTransactionSummaryProvider" class="com.oocl.ir4.arp.web.common.download.provider.InvoiceAdjustmentTransactionSummaryProvider">
+		<property name="transactionSummaryOpenService" ref="transactionSummaryOpenService" />
+		<property name="transactionSummaryDao" ref="transactionSummaryDao" />
+	</bean>
+	
+	<bean id="paymentTransactionSummaryComposer" class="com.oocl.ir4.arp.web.common.download.composer.PaymentTransactionSummaryComposer">
+		<property name="transactionSummaryOpenService" ref="transactionSummaryOpenService" />
+		<property name="transactionSummaryDao" ref="transactionSummaryDao" />
+	</bean>
+	
+	<bean id="paymentTransactionSummaryProvider" class="com.oocl.ir4.arp.web.common.download.provider.PaymentTransactionSummaryProvider">
+		<property name="transactionSummaryOpenService" ref="transactionSummaryOpenService" />
+		<property name="transactionSummaryDao" ref="transactionSummaryDao" />
+	</bean>
+	
+	<bean id="paymentAdjustmentTransactionSummaryComposer" class="com.oocl.ir4.arp.web.common.download.composer.PaymentAdjustmentTransactionSummaryComposer">
+		<property name="transactionSummaryOpenService" ref="transactionSummaryOpenService" />
+		<property name="transactionSummaryDao" ref="transactionSummaryDao" />
+	</bean>
+	
+	<bean id="paymentAdjustmentTransactionSummaryProvider" class="com.oocl.ir4.arp.web.common.download.provider.PaymentAdjustmentTransactionSummaryProvider">
+		<property name="transactionSummaryOpenService" ref="transactionSummaryOpenService" />
+		<property name="transactionSummaryDao" ref="transactionSummaryDao" />
+	</bean>
+
+	<bean id="xlsFormatter" class="com.oocl.ir4.arp.frm.data.formatter.excel.XLSFormatter" scope="prototype"/>
+	<bean id="excelXMLFormatter" class="com.oocl.ir4.arp.frm.data.formatter.excel.ExcelXMLFormatter" scope="prototype"/>
+    <bean id="invoiceMatchingReportFormatter" class="com.oocl.ir4.arp.web.common.download.formatter.InvoiceMatchingReportFormatter" scope="prototype"/>
+    
+    <bean id="downloadTransaction" class="com.oocl.ir4.arp.web.common.download.DefaultDownloadTransaction"/>
+
+</beans>

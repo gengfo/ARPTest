@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--
+	<import resource="domain-context.xml" />
+	-->
+<import resource="biz-audit-context.xml"/>
+
+	<bean id="invoiceMatchingDao" class="com.oocl.ir4.arp.dao.invoicematching.impl.JpaInvoiceMatchingDao">
+	</bean>
+    
+    <bean id="sapInterfaceDao" class="com.oocl.ir4.arp.dao.invoicematching.impl.JpaSAPInterfaceDao">
+    </bean>
+    <bean id="dashboardTaskDao" class="com.oocl.ir4.arp.dao.todolist.impl.JpaDashboardTaskDao">
+    </bean>
+    <bean id="crossCheckTask" class="com.oocl.ir4.arp.service.invoicematching.todolist.impl.CrossCheckInvMatchTaskHandler">
+    </bean>
+    <bean id="followUpTask" class="com.oocl.ir4.arp.service.invoicematching.todolist.impl.FollowUpInvMatchTaskHandler">
+    </bean>
+    <bean id="clarificationTask" class="com.oocl.ir4.arp.service.invoicematching.todolist.impl.ClarificationInvMatchTaskHandler">
+    </bean>
+    <bean id="dashBoardService" class="com.oocl.ir4.arp.service.invoicematching.todolist.impl.DefaultDashboardInvMatchService">
+        <property name="dashboardTaskDao" ref="dashboardTaskDao" />
+        <property name="crossCheckTask" ref="crossCheckTask" />
+        <property name="followUpTask" ref="followUpTask" />
+        <property name="clarificationTask" ref="clarificationTask" />
+    </bean>
+    
+    <bean id="sapInterfaceService" class="com.oocl.ir4.arp.service.invoicematching.impl.DefaultSAPInterfaceService">
+        <property name="sapInterfaceDao" ref="sapInterfaceDao" />
+        <property name="mailService" ref="mailService" />
+    </bean>
+    
+	<bean id="invoiceMatchingService" class="com.oocl.ir4.arp.service.invoicematching.impl.DefaultInvoiceMatchingService">
+		<property name="invoiceMatchingDao" ref="invoiceMatchingDao" />
+		<property name="sequenceNumberService" ref="sequenceNumberService" />
+		<property name="dashBoardService" ref="dashBoardService" />
+		<property name="auditTrailService" ref="auditTrailService" />
+		<property name="organizationService" ref="orgService" />
+		<property name="currencyService" ref="currencyService"/>
+	</bean>
+	
+	<bean id="sapPmtStatusFbProcessor" class="com.oocl.ir4.arp.service.sap.impl.SapPmtStatusFbProcessor">
+		<property name="invoiceMatchService" ref="invoiceMatchingService" />
+		<property name="auditTrailService" ref="auditTrailService" />
+		<property name="mailService" ref="mailService" />
+		<property name="orgService" ref="orgService" />
+	</bean>
+
+</beans>

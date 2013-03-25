@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="outstandingBalanceDao" class="com.oocl.ir4.arp.dao.outstandingbalance.impl.JpaOutstandingBalanceDao">
+	</bean>
+
+	<bean id="outstandingBalanceService" class="com.oocl.ir4.arp.service.outstandingbalance.DefaultOstBalReportService">
+		<property name="outstandingBalanceDao" ref="outstandingBalanceDao"/>
+		<property name="exchRateService" ref="exchangeRateService"/>
+		<property name="customerService" ref="customerService"/>
+		<property name="orgService" ref="orgService"/>
+	</bean>
+</beans>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <import resource="biz-suppdata-context.xml"/>
+    <import resource="biz-rule-context.xml"/>
+    <import resource="biz-audit-context.xml"/>
+    <import resource="biz-payment-context.xml"/>
+    <import resource="biz-cargosmart-context.xml"/>
+    
+    <bean id="invoiceDao" class="com.oocl.ir4.arp.dao.invoice.impl.JpaInvoiceDao">
+    </bean>
+    
+     <bean id="invoiceChargeDao" class="com.oocl.ir4.arp.dao.invoice.impl.JpaInvoiceChargeDao">
+    </bean>
+    
+    <bean id="invoiceService" class="com.oocl.ir4.arp.service.invoice.impl.DefaultInvoiceService">
+        <property name="invoiceDao" ref="invoiceDao"/>
+        <property name="invoiceChargeDao" ref="invoiceChargeDao"/>
+        <property name="bLInfoDao" ref="bLInfoDao"/>
+        <property name="orgService" ref="orgService"/>
+        <property name="ruleService" ref="ruleService"/>
+        <property name="auditTrailService" ref="auditTrailService"/>
+        <property name="paymentService" ref="paymentService"/>
+        <property name="invAdjService" ref="invAdjService"/>
+        <property name="sequenceNumberService" ref="sequenceNumberService"/>
+        <property name="exchangeRateService" ref="exchangeRateService"/>
+        <property name="chargeCodeService" ref="chargeCodeService"/>
+        <property name="currencyService" ref="currencyService"/>
+        <property name="customerService" ref="customerService"/>
+        <property name="invoiceDocService" ref="invoiceDocService"/>
+        <property name="csInterfaceService" ref="cargoSmartInterfaceService"/>
+        <property name="interfaceTaskService" ref="interfaceTaskService"/>
+        <property name="bLService" ref="bLService" />    
+    </bean>
+ 
+    <bean id="invoiceDocDao" class="com.oocl.ir4.arp.dao.invoice.pdf.impl.JpaInvoiceDocDao">
+    </bean>
+
+    <bean id="invoiceDocService" class="com.oocl.ir4.arp.service.invoice.impl.pdf.DefaultInvoiceDocService">
+        <property name="invoiceDocDao" ref="invoiceDocDao"/>
+        <property name="i18nResourceService" ref="i18nResourceService"/>
+    </bean>
+	
+	<bean id="invoiceDataConvertor" class="com.oocl.ir4.arp.service.invoice.impl.pdf.InvoiceDataConvertor">
+    </bean>
+    
+	<bean id="multiBLDataConvertor" class="com.oocl.ir4.arp.service.invoice.impl.pdf.MultiBLDataConvertor">
+    </bean>
+ 
+</beans>

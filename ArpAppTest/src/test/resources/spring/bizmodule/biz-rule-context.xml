@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--
+	<import resource="domain-context.xml" />
+	-->
+
+	<bean id="ruleDao" class="com.oocl.ir4.arp.dao.rule.impl.JpaRuleDao">
+	</bean>
+
+	<bean id="ruleService" class="com.oocl.ir4.arp.service.rule.impl.DefaultRuleService">
+		<property name="ruleDao" ref="ruleDao" />
+		<property name="orgService" ref="orgService" />
+	</bean>
+
+</beans>

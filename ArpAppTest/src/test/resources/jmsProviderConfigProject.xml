@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toplink:object-persistence version="Oracle TopLink - 11g Release 1 (11.1.1.3.0) (Build 100323)" xmlns:opm="http://xmlns.oracle.com/ias/xsds/opm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:toplink="http://xmlns.oracle.com/ias/xsds/toplink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <opm:name>jmsProviderConfigProject</opm:name>
+   <opm:class-mapping-descriptors>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.ConnectionFactoryTypeImpl</opm:class>
+         <opm:alias>ConnectionFactoryTypeImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_LocalJndiName</opm:attribute-name>
+               <opm:get-method>getLocalJndiName</opm:get-method>
+               <opm:set-method>setLocalJndiName</opm:set-method>
+               <opm:field name="local-jndi-name/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_RemoteJndiName</opm:attribute-name>
+               <opm:get-method>getRemoteJndiName</opm:get-method>
+               <opm:set-method>setRemoteJndiName</opm:set-method>
+               <opm:field name="remote-jndi-name/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Username</opm:attribute-name>
+               <opm:get-method>getUsername</opm:get-method>
+               <opm:set-method>setUsername</opm:set-method>
+               <opm:field name="username/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Password</opm:attribute-name>
+               <opm:get-method>getPassword</opm:get-method>
+               <opm:set-method>setPassword</opm:set-method>
+               <opm:field name="password/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/connection-factoryType</toplink:schema-context>
+            <toplink:node-type>complex-type</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.InitialContextFactoryImpl</opm:class>
+         <opm:alias>InitialContextFactoryImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Value</opm:attribute-name>
+               <opm:field name="text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>initial-context-factory</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/initial-context-factory</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.JmsProviderConfigImpl</opm:class>
+         <opm:alias>JmsProviderConfigImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_JmsProviders</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.JmsProviderConfigTypeImpl$JmsProvidersTypeImpl</toplink:reference-class>
+               <toplink:field name="jms-providers" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_ConnectionPool</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.JmsProviderConfigTypeImpl$ConnectionPoolTypeImpl</toplink:reference-class>
+               <toplink:field name="connection-pool" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>jms-provider-config</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/jms-provider-config</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.JmsProviderConfigTypeImpl</opm:class>
+         <opm:alias>JmsProviderConfigTypeImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_JmsProviders</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.JmsProviderConfigTypeImpl$JmsProvidersTypeImpl</toplink:reference-class>
+               <toplink:field name="jms-providers" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_ConnectionPool</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.JmsProviderConfigTypeImpl$ConnectionPoolTypeImpl</toplink:reference-class>
+               <toplink:field name="connection-pool" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/jms-provider-config</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.JmsProviderConfigTypeImpl$ConnectionPoolTypeImpl</opm:class>
+         <opm:alias>JmsProviderConfigTypeImpl$ConnectionPoolTypeImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_MaxActive</opm:attribute-name>
+               <opm:get-method>getMaxActive</opm:get-method>
+               <opm:set-method>setMaxActive</opm:set-method>
+               <opm:field name="max-active/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_MaxWait</opm:attribute-name>
+               <opm:get-method>getMaxWait</opm:get-method>
+               <opm:set-method>setMaxWait</opm:set-method>
+               <opm:field name="max-wait/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_MaxIdle</opm:attribute-name>
+               <opm:get-method>getMaxIdle</opm:get-method>
+               <opm:set-method>setMaxIdle</opm:set-method>
+               <opm:field name="max-idle/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_MaxTotal</opm:attribute-name>
+               <opm:get-method>getMaxTotal</opm:get-method>
+               <opm:set-method>setMaxTotal</opm:set-method>
+               <opm:field name="max-total/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_MinIdle</opm:attribute-name>
+               <opm:get-method>getMinIdle</opm:get-method>
+               <opm:set-method>setMinIdle</opm:set-method>
+               <opm:field name="min-idle/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_CleanInterval</opm:attribute-name>
+               <opm:get-method>getCleanInterval</opm:get-method>
+               <opm:set-method>setCleanInterval</opm:set-method>
+               <opm:field name="clean-interval/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_IdleTime</opm:attribute-name>
+               <opm:get-method>getIdleTime</opm:get-method>
+               <opm:set-method>setIdleTime</opm:set-method>
+               <opm:field name="idle-time/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/jms-provider-config/connection-pool</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.JmsProviderConfigTypeImpl$JmsProvidersTypeImpl</opm:class>
+         <opm:alias>JmsProviderConfigTypeImpl$JmsProvidersTypeImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-collection-mapping">
+               <opm:attribute-name>_JmsProvider</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.JmsProviderTypeImpl</toplink:reference-class>
+               <toplink:field name="jms-provider" xsi:type="toplink:node"/>
+               <toplink:container xsi:type="toplink:list-container-policy">
+                  <toplink:collection-type>java.util.Vector</toplink:collection-type>
+               </toplink:container>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/jms-provider-config/jms-providers</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.JmsProviderTypeImpl</opm:class>
+         <opm:alias>JmsProviderTypeImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Name</opm:attribute-name>
+               <opm:get-method>getName</opm:get-method>
+               <opm:set-method>setName</opm:set-method>
+               <opm:field name="name/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_InitialContextFactory</opm:attribute-name>
+               <opm:get-method>getInitialContextFactory</opm:get-method>
+               <opm:set-method>setInitialContextFactory</opm:set-method>
+               <opm:field name="initial-context-factory/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_ProviderUrl</opm:attribute-name>
+               <opm:get-method>getProviderUrl</opm:get-method>
+               <opm:set-method>setProviderUrl</opm:set-method>
+               <opm:field name="provider-url/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_SecurityPrincipal</opm:attribute-name>
+               <opm:get-method>getSecurityPrincipal</opm:get-method>
+               <opm:set-method>setSecurityPrincipal</opm:set-method>
+               <opm:field name="security-principal/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_SecurityCredentials</opm:attribute-name>
+               <opm:get-method>getSecurityCredentials</opm:get-method>
+               <opm:set-method>setSecurityCredentials</opm:set-method>
+               <opm:field name="security-credentials/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-collection-mapping">
+               <opm:attribute-name>_ConnectionFactory</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.ConnectionFactoryTypeImpl</toplink:reference-class>
+               <toplink:field name="connection-factory" xsi:type="toplink:node"/>
+               <toplink:container xsi:type="toplink:list-container-policy">
+                  <toplink:collection-type>java.util.Vector</toplink:collection-type>
+               </toplink:container>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/jms-providerType</toplink:schema-context>
+            <toplink:node-type>complex-type</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.LocalJndiNameImpl</opm:class>
+         <opm:alias>LocalJndiNameImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Value</opm:attribute-name>
+               <opm:field name="text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>local-jndi-name</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/local-jndi-name</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.NameImpl</opm:class>
+         <opm:alias>NameImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Value</opm:attribute-name>
+               <opm:field name="text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>name</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/name</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.PasswordImpl</opm:class>
+         <opm:alias>PasswordImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Value</opm:attribute-name>
+               <opm:field name="text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>password</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/password</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.ProviderUrlImpl</opm:class>
+         <opm:alias>ProviderUrlImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Value</opm:attribute-name>
+               <opm:field name="text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>provider-url</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/provider-url</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.RemoteJndiNameImpl</opm:class>
+         <opm:alias>RemoteJndiNameImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Value</opm:attribute-name>
+               <opm:field name="text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>remote-jndi-name</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/remote-jndi-name</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.SecurityCredentialsImpl</opm:class>
+         <opm:alias>SecurityCredentialsImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Value</opm:attribute-name>
+               <opm:field name="text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>security-credentials</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/security-credentials</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.SecurityPrincipalImpl</opm:class>
+         <opm:alias>SecurityPrincipalImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Value</opm:attribute-name>
+               <opm:field name="text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>security-principal</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/security-principal</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.jmswrapper.configuration.jaxb.impl.UsernameImpl</opm:class>
+         <opm:alias>UsernameImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Value</opm:attribute-name>
+               <opm:field name="text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>username</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>jmsProviderConfigProject.xsd</toplink:resource>
+            <toplink:schema-context>/username</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+   </opm:class-mapping-descriptors>
+   <toplink:login xsi:type="toplink:xml-login">
+      <toplink:platform-class>oracle.toplink.ox.platform.SAXPlatform</toplink:platform-class>
+      <toplink:user-name></toplink:user-name>
+      <toplink:password></toplink:password>
+   </toplink:login>
+</toplink:object-persistence>

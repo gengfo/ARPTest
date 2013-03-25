@@ -1,0 +1,61 @@
+<?xml version = '1.0'?>
+<Component>
+	<subcomponent name="ssoConfig" class="com.oocl.csc.frm.sso.config.SSOConfigComponent">
+		<var name="AGENT_FILE_LOCATION" value="D:/ToShare/arp-iris4/ARP_APP_Server/ARP_WAR/WebContent/WEB-INF/classes/agent-config.txt" />
+		<var name="SSO_ENABLED" value="true"/>
+		<var name="TIMER_INTERVAL" value="3600"/><!-- timer interval in seconds -->
+		<var name="RETRY_COUNT" value="3" />
+		<var name="RETRY_TIMER_INTERVAL" value="120"/><!-- retry timer interval in seconds -->
+		<var name="SERVICE_ACCOUNT" value="arpServiceAccount" />
+		<var name="DEFAULT_OPENTOKEN_COOKIE_NAME" value="USER_NAME" />
+		<!-- <var name="SERVICE_ACCOUNT_FILEPATH" value="." /> -->
+		<var name="DEFAULT_USERID_COOKIE_NAME" value="USER_ID" />
+	</subcomponent>
+
+	<subcomponent name="arpServiceAccount" class="com.oocl.csc.frm.sso.config.SSOServiceAccountConfigComponent">
+		<var name="OPENTOKEN_COOKIE_DOMAIN" value=".oocl.com" />
+		<var name="OPENTOKEN_COOKIE_PATH" value="/" />
+		<var name="REQUEST_STARTSSO_URL" value="" />
+		<!-- QA all sso set to QA, except PPD/PRD-->
+		<var name="REQUEST_REDIRECT_URL" value="http://ssoidpqa.oocl.com/idp/startSSO.ping?PartnerSpId=OOCL:SP:SAML1QA&amp;TargetResource=" />
+		
+		<var name="REQUEST_SERVICE_END_POINT" value="" />
+		<var name="OPENTOKEN_COOKIE_NAME" value="SSO_IRIS4_OPENTOKEN_COOKIE" />
+		<var name="LOGIN_DOMAIN_URL" value="%%INDEX_URL%%" />
+		<var name="REDIRECT_ON_TOKEN_EXPIRY" value="true" />
+		<var name="TOKEN_EXPIRY_REDIRECT_URL" value="./error.jsp" />
+	</subcomponent>
+
+    <subcomponent name="ssoLogger" class="com.oocl.csc.frm.integration.logger.impl.FWLoggerSubConfigComponent">
+        <var name="LOG_ENABLED" value="true" />
+        <var name="FORCED_FATAL" value="true" />
+        <var name="LOG_ERROR" value="true" />
+        <var name="LOG_FATAL" value="true" />
+        <var name="LOG_INFO" value="true" />
+        <var name="LOG_WARNING" value="true" />
+        <var name="LOG_DEBUG" value="true" />
+        <var name="LOGGER_SPECIFIC_PROPERTIES_FILE" value=""/>
+    </subcomponent>
+
+    <subcomponent name="ssoDebugLogger" class="com.oocl.csc.frm.integration.debug.logger.impl.FWDebugLoggerSubConfigComponent">
+ 		<var name="LOG_ENABLED" value="true"/>
+        <var name="LOGGER_CLASS_NAME" value="com.oocl.csc.frm.integration.debug.logger.impl.FWDefaultDebugLogger" />
+    	<var name="LOGGER_SPECIFIC_PROPERTIES_FILE" value="" />
+    </subcomponent>
+ 
+     <subcomponent name="ssoExceptionLogger" class="com.oocl.csc.frm.integration.exception.logger.impl.FWExceptionLoggerSubConfigComponent">
+ 		<var name="MSG_ID_FILE" value="filMsgId.txt" /> 
+		<var name="MSG_ID_MAX" value="100" /> 
+		<var name="MSG_LOG_DIR" value="D:/ToShare/arp-iris4/ARP_APP_Server/arp_logs/ssoLogs" /> 
+		<var name="FILE_LOGGING_ENABLED" value="true" /> 
+		<var name="DATA_CENTER_LOGGING_ENABLED" value="true" />
+		<var name="DATA_CENTER_WS_URL" value="" /> 
+		<var name="DATA_CENTER_WS_USERID" value="" />
+		<var name="DATA_CENTER_WS_PASSWORD" value="" />
+		<var name="DATA_CENTER_WS_REALM" value="" />
+		<var name="CONSOLIDATED_EMAIL_NOTIFIER_CONFIG_NAME" value="filEmailNotifiers" /> 
+		<var name="EMAIL_NOTIFIER_CONFIG_NAME" value="filEmailNotifierConfig" /> 
+		<var name="RECEPIENT_EMAIL_ADDRESSES" value="%%RECEPIENT_EMAIL_ADDRESSES%%" /> 
+		<var name="EMAIL_SOURCE" value="%%EMAIL_SOURCE%%" /> 
+    </subcomponent>
+</Component>

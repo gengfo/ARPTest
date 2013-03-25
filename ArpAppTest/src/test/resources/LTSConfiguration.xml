@@ -1,0 +1,29 @@
+<Component>
+	<!-- =================================================================== -->
+	<!--                LTSConfiguration File						 -->
+	<!-- =================================================================== -->
+  <subcomponent name="task1" class="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleSubConfigComponent">
+  	  <var name="TASK_CLASS_NAME" value="com.oocl.frm.lts.endtoend.common.TestTask" />
+	  <var name="IS_TASK_STATEFUL" value="false" /> 
+  </subcomponent>
+  <subcomponent name="taskDep" class="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleSubConfigComponent">
+  	  <var name="TASK_CLASS_NAME" value="com.oocl.frm.lts.endtoend.common.DependentTask" />
+	  <var name="IS_TASK_STATEFUL" value="true" /> 
+  </subcomponent>
+  <subcomponent name="taskForRetryTest" class="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleSubConfigComponent">
+  	  <var name="TASK_CLASS_NAME" value="com.oocl.frm.lts.endtoend.failure.TaskForRetry" />
+	  <var name="IS_TASK_STATEFUL" value="false" /> 
+  </subcomponent>
+  
+  <subcomponent name="taskDepFailure" class="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleSubConfigComponent">
+  	  <var name="TASK_CLASS_NAME" value="com.oocl.frm.lts.endtoend.failure.TaskForDependentFailure" />
+	  <var name="IS_TASK_STATEFUL" value="true" /> 
+  </subcomponent>
+  
+  <var name="BACKUP_FILE_FULL_PATH" value="D:/ToShare/arp-iris4/ARP_APP_Server/lts_agent/backup" />
+  <!-- cluster set as true-->
+  <var name="PROXY_TO_CLUSTER" value="false"/>
+  <!-- quartz.node1.properties;quartz.node1.properties -->
+  <var name="PROXY_TO_CLUSTER_NODES" value=""/>
+  <var name="NEED_RECOVERY_4_FAILURE_DURING_FAILOVER" value="false"/>
+</Component>

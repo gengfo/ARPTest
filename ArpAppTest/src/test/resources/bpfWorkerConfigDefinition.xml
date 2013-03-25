@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toplink:object-persistence version="Oracle TopLink - 11g Release 1 (11.1.1.3.0) (Build 100323)" xmlns:opm="http://xmlns.oracle.com/ias/xsds/opm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:toplink="http://xmlns.oracle.com/ias/xsds/toplink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <opm:name>bpfWorkerConfig</opm:name>
+   <opm:class-mapping-descriptors>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.BpfWorkerImpl</opm:class>
+         <opm:alias>BpfWorkerImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_RequestProcessorMappings</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.RequestProcessorMappingsImpl</toplink:reference-class>
+               <toplink:field name="request-processor-mappings" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_NotificationQueue</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.NotificationQueueImpl</toplink:reference-class>
+               <toplink:field name="notification-queue" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_ExceptionQueue</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.ExceptionQueueImpl</toplink:reference-class>
+               <toplink:field name="exception-queue" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_MaxEmailNotification</opm:attribute-name>
+               <opm:get-method>_getMaxEmailNotification</opm:get-method>
+               <opm:set-method>_setMaxEmailNotification</opm:set-method>
+               <opm:field name="max-email-notification/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_DataSource</opm:attribute-name>
+               <opm:get-method>getDataSource</opm:get-method>
+               <opm:set-method>setDataSource</opm:set-method>
+               <opm:field name="data-source/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>bpf-worker</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfWorkerConfig.xsd</toplink:resource>
+            <toplink:schema-context>/bpf-worker</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.BpfWorkerTypeImpl</opm:class>
+         <opm:alias>BpfWorkerTypeImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_RequestProcessorMappings</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.RequestProcessorMappingsImpl</toplink:reference-class>
+               <toplink:field name="request-processor-mappings" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_NotificationQueue</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.NotificationQueueImpl</toplink:reference-class>
+               <toplink:field name="notification-queue" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_ExceptionQueue</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.ExceptionQueueImpl</toplink:reference-class>
+               <toplink:field name="exception-queue" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_MaxEmailNotification</opm:attribute-name>
+               <opm:get-method>_getMaxEmailNotification</opm:get-method>
+               <opm:set-method>_setMaxEmailNotification</opm:set-method>
+               <opm:field name="max-email-notification/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_DataSource</opm:attribute-name>
+               <opm:get-method>getDataSource</opm:get-method>
+               <opm:set-method>setDataSource</opm:set-method>
+               <opm:field name="data-source/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfWorkerConfig.xsd</toplink:resource>
+            <toplink:schema-context>/bpf-worker</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.ExceptionQueueImpl</opm:class>
+         <opm:alias>ExceptionQueueImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Id</opm:attribute-name>
+               <opm:get-method>getId</opm:get-method>
+               <opm:set-method>setId</opm:set-method>
+               <opm:field name="id/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_MsgInfo</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.MsgInfoImpl</toplink:reference-class>
+               <toplink:field name="msg-info" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>exception-queue</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfWorkerConfig.xsd</toplink:resource>
+            <toplink:schema-context>/exception-queue</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.ExceptionQueueTypeImpl</opm:class>
+         <opm:alias>ExceptionQueueTypeImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Id</opm:attribute-name>
+               <opm:get-method>getId</opm:get-method>
+               <opm:set-method>setId</opm:set-method>
+               <opm:field name="id/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_MsgInfo</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.MsgInfoImpl</toplink:reference-class>
+               <toplink:field name="msg-info" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfWorkerConfig.xsd</toplink:resource>
+            <toplink:schema-context>/exception-queue</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.MsgInfoImpl</opm:class>
+         <opm:alias>MsgInfoImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_RootElement</opm:attribute-name>
+               <opm:get-method>getRootElement</opm:get-method>
+               <opm:set-method>setRootElement</opm:set-method>
+               <opm:field name="root_element/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_NameSpace</opm:attribute-name>
+               <opm:get-method>getNameSpace</opm:get-method>
+               <opm:set-method>setNameSpace</opm:set-method>
+               <opm:field name="name_space/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_VersionNumber</opm:attribute-name>
+               <opm:get-method>getVersionNumber</opm:get-method>
+               <opm:set-method>setVersionNumber</opm:set-method>
+               <opm:field name="version_number/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>msg-info</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfWorkerConfig.xsd</toplink:resource>
+            <toplink:schema-context>/msg-info</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.MsgInfoTypeImpl</opm:class>
+         <opm:alias>MsgInfoTypeImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_RootElement</opm:attribute-name>
+               <opm:get-method>getRootElement</opm:get-method>
+               <opm:set-method>setRootElement</opm:set-method>
+               <opm:field name="root_element/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_NameSpace</opm:attribute-name>
+               <opm:get-method>getNameSpace</opm:get-method>
+               <opm:set-method>setNameSpace</opm:set-method>
+               <opm:field name="name_space/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_VersionNumber</opm:attribute-name>
+               <opm:get-method>getVersionNumber</opm:get-method>
+               <opm:set-method>setVersionNumber</opm:set-method>
+               <opm:field name="version_number/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfWorkerConfig.xsd</toplink:resource>
+            <toplink:schema-context>/msg-info</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.NotificationQueueImpl</opm:class>
+         <opm:alias>NotificationQueueImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Id</opm:attribute-name>
+               <opm:get-method>getId</opm:get-method>
+               <opm:set-method>setId</opm:set-method>
+               <opm:field name="id/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_MsgInfo</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.MsgInfoImpl</toplink:reference-class>
+               <toplink:field name="msg-info" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>notification-queue</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfWorkerConfig.xsd</toplink:resource>
+            <toplink:schema-context>/notification-queue</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.NotificationQueueTypeImpl</opm:class>
+         <opm:alias>NotificationQueueTypeImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Id</opm:attribute-name>
+               <opm:get-method>getId</opm:get-method>
+               <opm:set-method>setId</opm:set-method>
+               <opm:field name="id/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_MsgInfo</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.MsgInfoImpl</toplink:reference-class>
+               <toplink:field name="msg-info" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfWorkerConfig.xsd</toplink:resource>
+            <toplink:schema-context>/notification-queue</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.RequestImpl</opm:class>
+         <opm:alias>RequestImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Type</opm:attribute-name>
+               <opm:get-method>getType</opm:get-method>
+               <opm:set-method>setType</opm:set-method>
+               <opm:field name="type/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Processor</opm:attribute-name>
+               <opm:get-method>getProcessor</opm:get-method>
+               <opm:set-method>setProcessor</opm:set-method>
+               <opm:field name="processor/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>request</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfWorkerConfig.xsd</toplink:resource>
+            <toplink:schema-context>/request</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.RequestProcessorMappingsImpl</opm:class>
+         <opm:alias>RequestProcessorMappingsImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-collection-mapping">
+               <opm:attribute-name>_Request</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.RequestImpl</toplink:reference-class>
+               <toplink:field name="request" xsi:type="toplink:node"/>
+               <toplink:container xsi:type="toplink:list-container-policy">
+                  <toplink:collection-type>java.util.Vector</toplink:collection-type>
+               </toplink:container>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>request-processor-mappings</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfWorkerConfig.xsd</toplink:resource>
+            <toplink:schema-context>/request-processor-mappings</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.RequestProcessorMappingsTypeImpl</opm:class>
+         <opm:alias>RequestProcessorMappingsTypeImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-collection-mapping">
+               <opm:attribute-name>_Request</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.RequestImpl</toplink:reference-class>
+               <toplink:field name="request" xsi:type="toplink:node"/>
+               <toplink:container xsi:type="toplink:list-container-policy">
+                  <toplink:collection-type>java.util.Vector</toplink:collection-type>
+               </toplink:container>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfWorkerConfig.xsd</toplink:resource>
+            <toplink:schema-context>/request-processor-mappings</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.server.worker.configuration.jaxb.impl.RequestTypeImpl</opm:class>
+         <opm:alias>RequestTypeImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Type</opm:attribute-name>
+               <opm:get-method>getType</opm:get-method>
+               <opm:set-method>setType</opm:set-method>
+               <opm:field name="type/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Processor</opm:attribute-name>
+               <opm:get-method>getProcessor</opm:get-method>
+               <opm:set-method>setProcessor</opm:set-method>
+               <opm:field name="processor/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xs</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfWorkerConfig.xsd</toplink:resource>
+            <toplink:schema-context>/request</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+   </opm:class-mapping-descriptors>
+   <toplink:login xsi:type="toplink:xml-login">
+      <toplink:platform-class>oracle.toplink.ox.platform.SAXPlatform</toplink:platform-class>
+      <toplink:user-name></toplink:user-name>
+      <toplink:password></toplink:password>
+   </toplink:login>
+</toplink:object-persistence>

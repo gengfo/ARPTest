@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<import resource="domain-context.xml" />
+	
+	<bean id="suppDataDao" class="com.oocl.ir4.arp.dao.suppdata.impl.JpaSuppDataDao">
+	</bean>
+	
+	<bean id="jpaSequenceNumberDao" class="com.oocl.ir4.arp.dao.suppdata.impl.JpaSequenceNumberDao">
+	</bean>
+
+	<bean id="currencyDao" class="com.oocl.ir4.cmn.dao.CurrencyDaoImpl">
+	</bean>
+
+	<bean id="arChargeDao" class="com.oocl.ir4.cmn.dao.ARChargeDaoImpl"></bean>
+
+	<bean id="i18nResourceDao" class="com.oocl.ir4.arp.dao.suppdata.impl.JpaI18NResourceDao">
+	</bean>
+
+	<bean id="chargeVATRateDao" class="com.oocl.ir4.arp.dao.suppdata.impl.JpaChargeVATRateDao">
+	</bean>
+
+	<bean id="organizationDao" class="com.oocl.ir4.arp.dao.suppdata.impl.JpaOrganizationDao">
+		<property name="organizationHierarchyDAO" ref="organizationHierarchyDAO" />
+	</bean>
+	
+	<bean id="organizationHierarchyDAO" class="com.oocl.ir4.gsp.org.dao.OrganizationHierarchyDAOImpl">
+	</bean>
+
+	<bean id="exchangeRateDao" class="com.oocl.ir4.arp.dao.suppdata.impl.JpaExchangeRateDao">
+	</bean>
+
+	<bean id="suppDataService"
+		class="com.oocl.ir4.arp.service.suppdata.impl.DefaultSuppDataService">
+		<property name="suppDataDao" ref="suppDataDao" />
+		<property name="currencyDao" ref="currencyDao" />
+	</bean>
+	
+	<bean id="mailService" class="com.oocl.ir4.arp.service.MailService"></bean>	
+
+	<bean id="currencyService"
+		class="com.oocl.ir4.arp.service.suppdata.impl.DefaultCurrencyService">
+			<property name="currencyDao" ref="currencyDao" />
+	</bean>
+
+	<bean id="i18nResourceService"
+		class="com.oocl.ir4.arp.service.suppdata.impl.DefaultI18NResourceService">
+		<property name="i18nResourceDao" ref="i18nResourceDao"></property>
+	</bean>
+
+	<bean id="chargeCodeService"
+		class="com.oocl.ir4.arp.service.suppdata.impl.DefaultChargeCodeService">
+		<property name="chargeVATRateDao" ref="chargeVATRateDao" />
+		<property name="arChargeDao" ref="arChargeDao" />
+	</bean>
+	
+	<bean id="costCodeService"
+		class="com.oocl.ir4.arp.service.suppdata.impl.DefaultCostCodeService">
+		<property name="apCostNCDao" ref="apCostNCDao" />
+		<property name="apCostSCDao" ref="apCostSCDao" />
+	</bean>
+
+	<bean id="orgService"
+		class="com.oocl.ir4.arp.service.suppdata.impl.DefaultOrganizationService">
+		<property name="organizationDao" ref="organizationDao" />
+	</bean>
+
+	<bean id="exchangeRateService"
+		class="com.oocl.ir4.arp.service.suppdata.impl.DefaultExchangeRateService">
+		<property name="exchangeRateDao" ref="exchangeRateDao" />
+	</bean>
+
+	<bean id="sequenceNumberDao" class="com.oocl.ir4.arp.dao.suppdata.impl.JpaSequenceNumberDao">
+	</bean>
+
+	<bean id="sequenceNumberService"
+		class="com.oocl.ir4.arp.service.suppdata.impl.DefaultSequenceNumberService">
+		<property name="sequenceNumberDao" ref="sequenceNumberDao" />
+		<property name="mailService" ref="mailService"></property>
+	</bean>
+
+	<bean id="userPreferenceService" class="com.oocl.ir4.arp.service.suppdata.impl.DefaultUserPreferenceService"> 
+		<property name="userPreferenceDao"  ref="userPreferenceDao"/>
+	</bean>
+	
+	<bean id="userPreferenceDao" class="com.oocl.ir4.arp.dao.suppdata.impl.JpaUserPreferenceDao"> 
+	</bean>
+
+    <bean id="apCostNCDao" class="com.oocl.ir4.cmn.dao.APCostNCDaoImpl">
+		
+	</bean>
+	
+	<bean id="apCostSCDao" class="com.oocl.ir4.cmn.dao.APCostSCDaoImpl">
+		
+	</bean>
+
+    <bean id="languageService" class="com.oocl.ir4.arp.service.suppdata.impl.DefaultLanguageService">
+
+	</bean>    
+	
+	<bean id="transactionSummaryDao" class="com.oocl.ir4.arp.dao.tranctionsummary.impl.JpaTransactionSummaryDao">
+	</bean>
+	<bean id="transactionSummaryService" class="com.oocl.ir4.arp.service.suppdata.impl.DefaultTransactionSummaryService">
+		<property name="jpaTransactionSummaryDao" ref="transactionSummaryDao" />
+	</bean>
+	
+	<bean id="customerDao" class="com.oocl.ir4.cus.dao.CustomerDaoImpl"> 
+	</bean>
+	<bean id="customerService" class="com.oocl.ir4.arp.service.suppdata.impl.DefaultCustomerService">
+		<property name="customerDao" ref="customerDao" />
+	</bean>
+	
+	<bean id="bpfDao" class="com.oocl.ir4.arp.bpf.BPFDao"> 
+	</bean>
+	 <bean id="bpfFailedRequestNotifierService" class="com.oocl.ir4.arp.service.bpf.BPFFailedRequestNotifier">
+        <property name="bpfDao" ref="bpfDao" />
+    </bean>
+
+    <bean id="bLInfoDao" class="com.oocl.ir4.arp.dao.suppdata.impl.JpaBLInfoDao"> 
+	</bean>
+	<bean id="bLService" class="com.oocl.ir4.arp.service.invoice.impl.DefaultBLService">
+		<property name="bLInfoDao" ref="bLInfoDao" />
+	</bean>
+</beans>

@@ -1,0 +1,43 @@
+<?xml version = '1.0'?>
+<Component>
+	<subcomponent name="AuthorizationAgentConfig" class="com.oocl.frm.authorization.config.AuthAgentConfigComponent">
+		<!-- set Authorization webservice url -->	
+		<!--	
+		<var name="WEB_SERVICE_URL" value="http://ir4qa1.oocl.com/wls_auth/service/AuthorizationService/PermissionToken" />
+		-->
+		<var name="WEB_SERVICE_URL" value="http://irisqa2.oocl.com/wls_auth/service/AuthorizationService/PermissionToken" />
+		
+		<!--<var name="WEB_SERVICE_URL" value="http://iris4pp.oocl.com/wls_auth/service/AuthorizationService/PermissionToken" />-->
+		<!-- use USER_ID or EMAIL_ID to generate permission token. Default is EMAIL_ID. -->
+		<var name="ID_TYPE" value="USER_ID"/>
+		<!-- Indicate whether authorization is enabled or not. Default is true. -->
+    		<var name="AUTHORIZATION_ENABLED" value="true"/>
+		<!-- Settings for retrieving feature permissions in certain scope.
+			FEATURE_ID_PREFIX indicates the scope, 
+			permissions of features whose feature Id start with the value will be returned.
+			If not set, default will return full permission token. -->
+		<var name="FEATURE_SCOPE_ENABLED" value="false" />
+		<var name="WEB_SERVICE_URL_WITH_SCOPE" value="http://irisqa2.oocl.com/wls_auth/service/AuthorizationService/PermissionTokenWithinScope" />
+		<!--
+		<var name="WEB_SERVICE_URL_WITH_SCOPE" value="http://ir4qa1.oocl.com/wls_auth/service/AuthorizationService/PermissionTokenWithinScope" />
+		-->
+		<!--<var name="WEB_SERVICE_URL_WITH_SCOPE" value="http://iris4pp.oocl.com/wls_auth/service/AuthorizationService/PermissionTokenWithinScope" />-->
+		<var name="FEATURE_ID_PREFIX" value="100" />
+		<!-- If any exception occurs in AuthorizationLoginFilter, request will be redirect to the error page.
+		Mandatory. No default value. Missing this setting will cause 404 in authorization exception case.  -->
+		<var name="ERROR_REDIRECT_URL" value="%%ERROR_PAGE_URL%%" />
+		<var name="AUTH_COOKIE_DOMAIN" value=".oocl.com" />
+		<var name="AUTH_COOKIE_PATH" value="/" />
+
+	</subcomponent>
+	<subcomponent name="AuthAgentLogger" class="com.oocl.csc.frm.integration.logger.impl.FWLoggerSubConfigComponent">
+		<var name="LOG_ENABLED" value="true" />
+		<var name="FORCED_FATAL" value="true" />
+		<var name="LOG_ERROR" value="true" />
+		<var name="LOG_FATAL" value="true" />
+		<var name="LOG_INFO" value="true" />
+		<var name="LOG_WARNING" value="true" />
+		<var name="LOG_DEBUG" value="true" />
+		<var name="LOGGER_SPECIFIC_PROPERTIES_FILE" value="" />
+	</subcomponent>
+</Component>

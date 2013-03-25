@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<!--
+	<import resource="domain-context.xml" />
+	-->
+
+	<bean id="invAdjDao" class="com.oocl.ir4.arp.dao.invadj.impl.JpaInvoiceAdjustmentDao">
+	</bean>
+
+	<bean id="sequenceNumberService"
+		class="com.oocl.ir4.arp.service.suppdata.impl.DefaultSequenceNumberService">
+		<property name="sequenceNumberDao" ref="sequenceNumberDao" />
+	</bean>
+	
+	<bean id="exchangeRateService" class="com.oocl.ir4.arp.service.suppdata.impl.DefaultExchangeRateService">
+		<property name="jpaExchangeRateDao" ref="jpaExchangeRateDao" />
+	</bean>	
+	
+	<bean id="currencyService" class="com.oocl.ir4.arp.service.suppdata.impl.DefaultCurrencyService">
+	</bean>	
+
+	<bean id="invAdjService" class="com.oocl.ir4.arp.service.invadj.impl.DefaultInvoiceAdjustmentService">
+		<property name="invAdjDao" ref="invAdjDao" />
+		<property name="invoiceService" ref="invoiceService" />
+		<property name="currencyService" ref="currencyService" />
+		<property name="exchangeRateService" ref="exchangeRateService" />
+		<property name="sequenceNumberService" ref="sequenceNumberService" />
+	</bean>
+
+</beans>
