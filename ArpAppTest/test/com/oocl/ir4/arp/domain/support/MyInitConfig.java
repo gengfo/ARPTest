@@ -5,6 +5,7 @@ import com.oocl.csc.frm.config.loader.FWIInitConfig;
 public class MyInitConfig implements FWIInitConfig {
 
 	public String getApplicationName() {
+	    
 		return "ARPUT";
 	}
 

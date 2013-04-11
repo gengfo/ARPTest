@@ -24,6 +24,7 @@ public class MySfSnInvoiceOM4DueDate {
     public final static String TRADE_NAT = "NAT";
 
     public static Invoice createSfInvoiceWithNoFixedPaymentDate() {
+        
 
         Invoice invoice = new Invoice();
         invoice.setFinancialType("SF");

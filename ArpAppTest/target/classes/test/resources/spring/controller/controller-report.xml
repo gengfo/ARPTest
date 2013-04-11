@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <!--
+    <import resource="../service/service-main.xml"/>
+    -->
+    
+    <bean id="transactionSummaryController"
+     class="com.oocl.ir4.arp.web.transactionsummary.controller.TransactionSummaryController">
+        <property name="transactionSummaryOpenService" ref="transactionSummaryOpenService"/>
+    </bean>
+    <bean id="outstandingBalanceController"
+          class="com.oocl.ir4.arp.web.report.controller.AnalyzeOutstandingBalanceController">
+        <property name="cpfCustomerOpenService" ref="cpfCustomerOpenService"/>
+        <property name="analyzeOutstandingBalanceOpenService" ref="analyzeOutstandingBalanceOpenService"/>
+    </bean>
+
+</beans>

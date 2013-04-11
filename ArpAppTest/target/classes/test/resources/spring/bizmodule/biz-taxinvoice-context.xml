@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<import resource="biz-suppdata-context.xml" />
+	<import resource="biz-rule-context.xml" />
+
+
+	<bean id="taxInvoiceNumRangeDao"
+		class="com.oocl.ir4.arp.dao.taxinvoicenum.impl.JpaTaxInvoiceNumRangeDao">
+	</bean>
+
+	<bean id="taxInvoiceNumRangeService"
+		class="com.oocl.ir4.arp.service.taxinvoicenumrange.DefaultTaxInvoiceNumRangeService">
+		<property name="taxInvoiceNumRangeDao" ref="taxInvoiceNumRangeDao" />
+		<property name="auditTrailService" ref="auditTrailService" />
+		<property name="organizationService" ref="orgService" />
+		<property name="ruleService" ref="ruleService" />
+	</bean>
+
+	<bean id="taxInvoiceDao" class="com.oocl.ir4.arp.dao.taxinvoice.impl.JpaTIDao" />
+
+	<bean id="taxInvoiceService"
+		class="com.oocl.ir4.arp.service.taxinvoice.DefaultTaxInvoiceService">
+		<property name="dao" ref="taxInvoiceDao" />
+	</bean>
+
+	<bean id="citRateDao" class="com.oocl.ir4.arp.dao.taxinvoice.impl.JpaCITRateDao" />
+
+	<bean id="citRateService"
+		class="com.oocl.ir4.arp.service.taxinvoice.DefaultCITRateService">
+		<property name="citRateDao" ref="citRateDao" />
+		<property name="auditTrailService" ref="auditTrailService" />
+		<property name="organizationService" ref="orgService" />
+	</bean>
+
+</beans>
+ 

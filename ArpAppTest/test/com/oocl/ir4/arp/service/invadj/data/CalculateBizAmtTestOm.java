@@ -10,6 +10,7 @@ import com.oocl.ir4.cus.model.Customer;
 public class CalculateBizAmtTestOm {
 
 	public static Invoice createInovice() {
+	    
 
 		Invoice invoice = new Invoice();
 

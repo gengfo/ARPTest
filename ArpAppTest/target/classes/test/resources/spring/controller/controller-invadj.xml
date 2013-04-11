@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+	<!--
+    <import resource="../service/service-main.xml"/>
+    -->
+    
+	<bean id="FindInvoice4AdjustmentController"
+		class="com.oocl.ir4.arp.web.invadj.controller.FindInvoice4AdjustmentController">
+		
+		<property name="invAdjOpenService" ref="invAdjOpenService"/>
+		
+	</bean>
+   
+	<bean id="AddInvoiceAdjustmentController"
+		class="com.oocl.ir4.arp.web.invadj.controller.AddInvoiceAdjustmentController">
+		
+		<property name="invAdjOpenService" ref="invAdjOpenService"/>
+		
+	</bean>
+	
+	<bean id="FindExchangeRateController"
+		class="com.oocl.ir4.arp.web.invadj.controller.FindExchangeRateController">
+		<property name="invAdjOpenService" ref="invAdjOpenService"/>
+	</bean>
+    
+	<bean id="InvOffsetController"
+		class="com.oocl.ir4.arp.web.invadj.controller.InvOffsetController">
+		<property name="invAdjOpenService" ref="invAdjOpenService"/>
+	</bean>
+
+</beans>

@@ -12,18 +12,19 @@ import org.junit.Ignore;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+import base.BasedTestCase;
+
 import com.oocl.csc.frm.config.loader.FWConfigLoadingException;
 import com.oocl.csc.frm.integration.configuration.loader.FWConfigurationLoader;
 import com.oocl.frm.model.date.PFWAbsoluteDateTime;
 import com.oocl.frm.model.date.PFWLocalizedDateTime;
 import com.oocl.frm.persistence.impl.FrmPersistenceEntityManagerAccessor;
-import com.oocl.ir4.arp.openservice.audit.AuditTrailOpenService;
 import com.oocl.ir4.arp.openservice.audit.dto.SearchAuditTrailListDTO;
 import com.oocl.ir4.arp.openservice.audit.dto.SearchAuditTrailListResultDTO;
 import com.oocl.ir4.arp.openservice.common.dto.DTOConverter.DateFormatEnum;
 import com.oocl.ir4.arp.utils.DateUtils;
 
-public class DefaultAuditTrailOpenServiceTest {
+public class DefaultAuditTrailOpenServiceTest extends BasedTestCase {
 
     /**
      * Unit test usage: 1. in java build path\ porjects 1.1. add domain project 1.2. add servcie test porject 2. in java
@@ -34,15 +35,7 @@ public class DefaultAuditTrailOpenServiceTest {
     // LogManager.getInstance().getLogger(DefaultAuditTrailOpenServiceTest.class);
     private static Logger log = LogManager.getLogger(DefaultAuditTrailOpenServiceTest.class);
     // must set while invoke BI publisher jar
-    static {
-
-        System.setProperty("javax.xml.parsers.DocumentBuilderFactory",
-                "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl");
-        System.setProperty("javax.xml.transform.TransformerFactory",
-                "com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
-
-    }
-
+  
     private AuditTrailOpenService auditTrailOpenService;
 
     @Ignore

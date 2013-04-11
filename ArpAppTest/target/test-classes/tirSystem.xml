@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean name="lock" class="com.oocl.frm.tir.lock.MemoryLock"></bean>
+	
+	<!-- added by gengfo ?? TODO to double confirm whether needed  -->
+	<!-- 
+	<bean name="scheduler"
+		class="com.oocl.frm.tir.schedule.impl.lts.LTSScheduler">
+	</bean>
+	 -->
+
+	<bean name="systemConstans"
+		class="com.oocl.frm.tir.configuration.SystemVariables">
+		<property name="server" value="false" />
+		<property name="host" value="localhost" />
+		<property name="port" value="1109" />
+		<property name="remoteSearch" value="true" />
+		<!--
+		<property name="recoverIndexUpdateInterval" value="1000" />
+		-->
+	</bean>
+
+</beans>

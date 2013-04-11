@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:complexType name="connection-factoryType">
+		<xs:sequence>
+			<xs:element ref="local-jndi-name"/>
+			<xs:element ref="remote-jndi-name"/>
+			<xs:element ref="username"/>
+			<xs:element ref="password"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="jms-providerType">
+		<xs:sequence>
+			<xs:element ref="name"/>
+			<xs:element ref="initial-context-factory"/>
+			<xs:element ref="provider-url"/>
+			<xs:element ref="security-principal"/>
+			<xs:element ref="security-credentials"/>
+			<xs:element name="connection-factory" type="connection-factoryType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="jms-provider-config">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="jms-providers">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="jms-provider" type="jms-providerType" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="connection-pool">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="max-active" type="xs:integer" default="8" minOccurs="0"/>
+							<xs:element name="max-wait" type="xs:integer" default="25000" minOccurs="0"/>
+							<xs:element name="max-idle" type="xs:integer" default="8" minOccurs="0"/>
+							<xs:element name="max-total" type="xs:integer" default="-1" minOccurs="0"/>
+							<xs:element name="min-idle" type="xs:integer" default="0" minOccurs="0"/>
+							<xs:element name="clean-interval" type="xs:integer" default="-1" minOccurs="0"/>
+							<xs:element name="idle-time" type="xs:integer" default="1800000" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="name" type="xs:string"/>
+	<xs:element name="initial-context-factory" type="xs:string"/>
+	<xs:element name="provider-url" type="xs:string"/>
+	<xs:element name="security-credentials" type="xs:string"/>
+	<xs:element name="security-principal" type="xs:string"/>
+	<xs:element name="remote-jndi-name" type="xs:string"/>
+	<xs:element name="local-jndi-name" type="xs:string"/>
+	<xs:element name="username" type="xs:string"/>
+	<xs:element name="password" type="xs:string"/>
+</xs:schema>

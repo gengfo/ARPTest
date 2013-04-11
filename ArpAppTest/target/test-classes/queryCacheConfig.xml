@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Component>
+    <subcomponent name="cacheManagerConfig" class="com.oocl.frm.querycache.config.CacheManagerConfigComponent">
+        <!-- PAGED_CACHE_DB_FETCH_RETRY_CNT controls the number of retries the CacheManager will perform 
+        	when a page cannot be retrieved from the paging cache.  -->
+        <var name="PAGED_CACHE_DB_FETCH_RETRY_CNT" value="5" />
+        <!-- PAGED_CACHE_DB_FETCH_RETRY_INT controls the interval (in ms) between each retry the CacheManager will perform 
+        	when a page cannot be retrieved from the paging cache.-->
+        <var name="PAGED_CACHE_DB_FETCH_RETRY_INT" value="500" />
+        <!-- CACHE_INIT_RANGE_WAIT_TIME controls the wait time (in ms) between each retry that would be performed 
+        	when DQCF tries to obtain a lock for an object. -->
+        <var name="CACHE_INIT_RANGE_WAIT_TIME" value="3000" />
+        <!-- CACHE_INIT_RANGE_RETRY_CNT controls the maximum number of retries that would be performed 
+        	when DQCF tries to obtain a lock for an object. -->
+        <var name="CACHE_INIT_RANGE_RETRY_CNT" value="5" />
+        <!-- PAGED_CACHE_AUTO_REMOVE_PREVIOUS_PAGE controls whether DQCF help to remove "n" page when get "n+1" page. -->
+        <var name="PAGED_CACHE_AUTO_REMOVE_PREVIOUS_PAGE" value="false" />
+        <!-- EVENT_TIME_TO_LIVE controls message time (in ms) to live. Default value is one hour. -->
+        <var name="EVENT_TIME_TO_LIVE" value = "3600000"/>
+        <var name="EVENT_QUEUE_NAME" value="CDRIVE.FWK.QUERYCACHE.EVENT" />
+    </subcomponent>
+
+    <subcomponent name="queryCacheLogger" class="com.oocl.csc.frm.integration.logger.impl.FWLoggerSubConfigComponent">
+        <var name="LOG_ENABLED" value="true" />
+        <var name="FORCED_FATAL" value="true" />
+        <var name="LOG_ERROR" value="true" />
+        <var name="LOG_FATAL" value="true" />
+        <var name="LOG_INFO" value="true" />
+        <var name="LOG_WARNING" value="true" />
+        <var name="LOG_DEBUG" value="true" />
+        <var name="LOGGER_SPECIFIC_PROPERTIES_FILE" value="log4j.xml"/>
+    </subcomponent>
+
+    <subcomponent name="queryCacheEventLogger" class="com.oocl.csc.frm.integration.logger.impl.FWLoggerSubConfigComponent">
+        <var name="LOG_ENABLED" value="true" />
+        <var name="FORCED_FATAL" value="true" />
+        <var name="LOG_ERROR" value="true" />
+        <var name="LOG_FATAL" value="true" />
+        <var name="LOG_INFO" value="true" />
+        <var name="LOG_WARNING" value="true" />
+        <var name="LOG_DEBUG" value="true" />
+        <var name="LOGGER_SPECIFIC_PROPERTIES_FILE" value="log4j.xml"/>
+    </subcomponent>
+
+    <subcomponent name="queryCacheResponseTimeLogger" class="com.oocl.csc.frm.integration.logger.impl.FWLoggerSubConfigComponent">
+        <var name="LOG_ENABLED" value="true" />
+        <var name="FORCED_FATAL" value="true" />
+        <var name="LOG_ERROR" value="true" />
+        <var name="LOG_FATAL" value="true" />
+        <var name="LOG_INFO" value="true" />
+        <var name="LOG_WARNING" value="true" />
+        <var name="LOG_DEBUG" value="true" />
+        <var name="LOGGER_SPECIFIC_PROPERTIES_FILE" value="log4j.xml"/>
+    </subcomponent>
+    
+    <subcomponent name="queryCacheDebugLogger" class="com.oocl.csc.frm.integration.debug.logger.impl.FWDebugLoggerSubConfigComponent">
+		<var name="LOG_ENABLED" value="true" /> 
+		<var name="LOGGER_CLASS_NAME" value="com.oocl.csc.frm.integration.debug.logger.impl.FWDefaultDebugLogger" /> 
+		<var name="LOGGER_SPECIFIC_PROPERTIES_FILE" value="log4j.xml" /> 
+    </subcomponent>
+</Component>

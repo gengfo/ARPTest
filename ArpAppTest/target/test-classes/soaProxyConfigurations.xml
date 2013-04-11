@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Component>
+
+	<subcomponent name="DomainId" class="com.oocl.csc.frm.soa.proxy.config.impl.FWProxyConfigComponent">
+		<var name="DomainId" value="010101010101" />
+	</subcomponent> 
+	
+	<subcomponent name="com.oocl.cdrive.eqm.business.service.AggregateIRIS4ExtSVCClientWrapper" 
+                            class="com.oocl.csc.frm.soa.proxy.config.impl.FWProxyConfigComponent">
+    		<var name="WEB_SERVICE_URL" value="http://soaqs.oocl.com/gateway/services/AggregateIRIS4ExtSVCUpQa1?WSDL" /> 
+	        <var name="AUTHENTICATION_ENABLED" value="false" /> 
+	        <var name="PERFORMANCE_MONITORING_ENABLED" value="false" /> 
+    	</subcomponent>
+    	
+    	<subcomponent name="com.oocl.mcci.nm.ws.proxy.NotificationServiceClientWrapper" class="com.oocl.csc.frm.soa.proxy.config.impl.FWProxyConfigComponent">
+		<var name="WEB_SERVICE_URL" value="http://wongst3-3.corp.oocl.com/MCCI_FWK_NM/NotificationService?WSDL" /> 
+		<var name="AUTHENTICATION_ENABLED" value="false" /> 
+		<var name="PERFORMANCE_MONITORING_ENABLED" value="true" />
+	</subcomponent>
+	
+	<subcomponent name="com.oocl.csc.frm.soa.proxy.rest.FWRESTServiceProxy(com.oocl.ir4.proxy.rest.doc.BillOfLading)" class="com.oocl.csc.frm.soa.proxy.config.impl.FWProxyConfigComponent">
+		<var name="WEB_SERVICE_URL" value="http://irisqa2.oocl.com/wls_dom_doc/rest" />
+		<var name="AUTHENTICATION_ENABLED" value="false" /> 
+		<var name="PERFORMANCE_MONITORING_ENABLED" value="true" /> 
+	</subcomponent>
+	
+	  <!--light Shipment URL -->
+	<subcomponent name="com.oocl.csc.frm.soa.proxy.rest.FWRESTServiceProxy(com.oocl.ir4.shp.model.LightWeightShipment)" class="com.oocl.csc.frm.soa.proxy.config.impl.FWProxyConfigComponent">
+		<var name="WEB_SERVICE_URL" value="http://irisqa2.oocl.com/wls_dom_shp/rest/shipment/lw/" />
+		<var name="AUTHENTICATION_ENABLED" value="false" /> 
+		<var name="PERFORMANCE_MONITORING_ENABLED" value="true" /> 
+	</subcomponent>
+	
+  	<!--Shipment URL -->
+	<subcomponent name="com.oocl.csc.frm.soa.proxy.rest.FWRESTServiceProxy(com.oocl.ir4.proxy.rest.shp.Shipment)" class="com.oocl.csc.frm.soa.proxy.config.impl.FWProxyConfigComponent">
+		<var name="WEB_SERVICE_URL" value="http://irisqa2.oocl.com/wls_dom_shp/rest/shipment/" />
+		<var name="AUTHENTICATION_ENABLED" value="false" /> 
+		<var name="PERFORMANCE_MONITORING_ENABLED" value="true" /> 
+	</subcomponent>
+    
+</Component>

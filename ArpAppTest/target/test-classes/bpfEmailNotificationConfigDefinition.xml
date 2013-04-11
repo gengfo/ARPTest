@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toplink:object-persistence version="Oracle TopLink - 11g Release 1 (11.1.1.3.0) (Build 100323)" xmlns:opm="http://xmlns.oracle.com/ias/xsds/opm" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:toplink="http://xmlns.oracle.com/ias/xsds/toplink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <opm:name>bpfEmailNotificationConfig</opm:name>
+   <opm:class-mapping-descriptors>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.system.notification.jaxb.impl.BpfEmailNotificationImpl</opm:class>
+         <opm:alias>BpfEmailNotificationImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Name</opm:attribute-name>
+               <opm:get-method>getName</opm:get-method>
+               <opm:set-method>setName</opm:set-method>
+               <opm:field name="name/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Description</opm:attribute-name>
+               <opm:get-method>getDescription</opm:get-method>
+               <opm:set-method>setDescription</opm:set-method>
+               <opm:field name="description/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_Email</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.bpf.system.notification.jaxb.impl.EmailTypeImpl</toplink:reference-class>
+               <toplink:field name="email" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:default-root-element>bpf-email-notification</toplink:default-root-element>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xsd</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfEmailNotificationConfig.xsd</toplink:resource>
+            <toplink:schema-context>/bpf-email-notification</toplink:schema-context>
+            <toplink:node-type>element</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.system.notification.jaxb.impl.BpfEmailNotificationTypeImpl</opm:class>
+         <opm:alias>BpfEmailNotificationTypeImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Name</opm:attribute-name>
+               <opm:get-method>getName</opm:get-method>
+               <opm:set-method>setName</opm:set-method>
+               <opm:field name="name/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_Description</opm:attribute-name>
+               <opm:get-method>getDescription</opm:get-method>
+               <opm:set-method>setDescription</opm:set-method>
+               <opm:field name="description/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-object-mapping">
+               <opm:attribute-name>_Email</opm:attribute-name>
+               <toplink:reference-class>com.oocl.frm.bpf.system.notification.jaxb.impl.EmailTypeImpl</toplink:reference-class>
+               <toplink:field name="email" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xsd</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfEmailNotificationConfig.xsd</toplink:resource>
+            <toplink:schema-context>/bpf-email-notification-type</toplink:schema-context>
+            <toplink:node-type>complex-type</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+      <opm:class-mapping-descriptor xsi:type="toplink:xml-class-mapping-descriptor">
+         <opm:class>com.oocl.frm.bpf.system.notification.jaxb.impl.EmailTypeImpl</opm:class>
+         <opm:alias>EmailTypeImpl</opm:alias>
+         <opm:events xsi:type="toplink:event-policy"/>
+         <opm:querying xsi:type="toplink:query-policy"/>
+         <opm:attribute-mappings>
+            <opm:attribute-mapping xsi:type="toplink:xml-direct-mapping">
+               <opm:attribute-name>_From</opm:attribute-name>
+               <opm:get-method>getFrom</opm:get-method>
+               <opm:set-method>setFrom</opm:set-method>
+               <opm:field name="from/text()" xsi:type="toplink:node"/>
+            </opm:attribute-mapping>
+            <opm:attribute-mapping xsi:type="toplink:xml-composite-direct-collection-mapping">
+               <opm:attribute-name>_To</opm:attribute-name>
+               <opm:get-method>getTo</opm:get-method>
+               <opm:set-method>setTo</opm:set-method>
+               <toplink:field name="to/text()" xsi:type="toplink:node"/>
+               <toplink:container xsi:type="toplink:list-container-policy">
+                  <toplink:collection-type>java.util.Vector</toplink:collection-type>
+               </toplink:container>
+            </opm:attribute-mapping>
+         </opm:attribute-mappings>
+         <toplink:descriptor-type>aggregate</toplink:descriptor-type>
+         <toplink:instantiation/>
+         <toplink:copying xsi:type="toplink:instantiation-copy-policy"/>
+         <toplink:change-policy xsi:type="toplink:deferred-detection-change-policy"/>
+         <toplink:namespace-resolver>
+            <toplink:namespaces>
+               <toplink:namespace>
+                  <toplink:prefix>xsd</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema</toplink:namespace-uri>
+               </toplink:namespace>
+               <toplink:namespace>
+                  <toplink:prefix>xsi</toplink:prefix>
+                  <toplink:namespace-uri>http://www.w3.org/2001/XMLSchema-instance</toplink:namespace-uri>
+               </toplink:namespace>
+            </toplink:namespaces>
+         </toplink:namespace-resolver>
+         <toplink:schema xsi:type="toplink:schema-file-reference">
+            <toplink:resource>bpfEmailNotificationConfig.xsd</toplink:resource>
+            <toplink:schema-context>/email-type</toplink:schema-context>
+            <toplink:node-type>complex-type</toplink:node-type>
+         </toplink:schema>
+      </opm:class-mapping-descriptor>
+   </opm:class-mapping-descriptors>
+   <toplink:login xsi:type="toplink:xml-login">
+      <toplink:platform-class>oracle.toplink.ox.platform.SAXPlatform</toplink:platform-class>
+      <toplink:user-name></toplink:user-name>
+      <toplink:password></toplink:password>
+   </toplink:login>
+</toplink:object-persistence>

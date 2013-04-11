@@ -1,0 +1,8 @@
+<?xml version = '1.0'?>
+<Component>
+	<subcomponent name="cpfwDestination" class="com.oocl.frm.cpfw.utils.config.CpfwUtilConfigComponent">
+		<var name="REQUEST_TOPIC" value="Topics_CLIENTPUSH/FWK.CPFW.PUSH.REQUEST" />
+		<var name="CONNECTION_FACTORY" value="MessageFrameworkXAPoolCF_CLIENTPUSH" />
+		<var name="REQUEST_TIMEOUT" value="10000"/>
+	</subcomponent>
+</Component>

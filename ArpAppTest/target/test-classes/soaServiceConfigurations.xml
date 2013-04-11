@@ -1,0 +1,65 @@
+<Component>
+
+    <subcomponent name="soaASIFSubmissionServiceConfig" class="com.oocl.csc.frm.bsf.service.policy.impl.FWRequestExecutionPolicyConfigComponent">
+  	<var name="ART_REQUIRED" value="true" readonly="true"/>
+  	<var name="AUTHENTICATION_REQUIRED" value="false" readonly="true"/>
+  	<var name="DISABLE_SERVICES" value="" />
+    </subcomponent> 
+    
+    <subcomponent name="soaBPFSubmissionServiceConfig" class="com.oocl.csc.frm.bsf.service.policy.impl.FWRequestExecutionPolicyConfigComponent">
+  	<var name="ART_REQUIRED" value="true" readonly="true"/>
+  	<var name="AUTHENTICATION_REQUIRED" value="false" readonly="true"/>
+  	<var name="DISABLE_SERVICES" value="" />
+    </subcomponent> 
+    
+    <subcomponent name="soaSchedulingSubmissionServiceConfig" class="com.oocl.csc.frm.bsf.service.policy.impl.FWRequestExecutionPolicyConfigComponent">
+  	<var name="ART_REQUIRED" value="true" readonly="true"/>
+  	<var name="AUTHENTICATION_REQUIRED" value="false" readonly="true"/>
+  	<var name="DISABLE_SERVICES" value="" />
+    </subcomponent> 
+    
+    <subcomponent name="soaInlineServiceConfig" class="com.oocl.csc.frm.bsf.service.policy.impl.FWRequestExecutionPolicyConfigComponent">
+  	<var name="ART_REQUIRED" value="true" readonly="true"/>
+  	<var name="AUTHENTICATION_REQUIRED" value="false" readonly="true"/>
+  	<var name="DISABLE_SERVICES" value="" />
+    </subcomponent> 
+    
+    <subcomponent name="soaInternalWebServiceConfig" class="com.oocl.csc.frm.bsf.service.policy.impl.FWRequestExecutionPolicyConfigComponent">
+  	<var name="ART_REQUIRED" value="true" readonly="true"/>
+  	<var name="AUTHENTICATION_REQUIRED" value="false" readonly="true"/>
+  	<var name="DISABLE_SERVICES" value="" />
+    </subcomponent> 
+    
+    <subcomponent name="soaExternalWebServiceConfig" class="com.oocl.csc.frm.bsf.service.policy.impl.FWRequestExecutionPolicyConfigComponent">
+  	<var name="ART_REQUIRED" value="true" readonly="true"/>
+  	<var name="AUTHENTICATION_REQUIRED" value="false" readonly="true"/>
+  	<var name="DISABLE_SERVICES" value="" />
+  	<var name="checkDBAvailability" value="false" />
+  	<var name="sessionName" value="Session" />
+  	<var name="brokerName" value="SessionBroker" />
+  	<var name="userSQL" value="" />	
+    </subcomponent> 
+    
+    <subcomponent name="soaInternalEJBWebServiceConfig" class="com.oocl.csc.frm.bsf.service.policy.impl.FWRequestExecutionPolicyConfigComponent">
+  	<var name="ART_REQUIRED" value="true" readonly="true"/>
+  	<var name="AUTHENTICATION_REQUIRED" value="false" readonly="true"/>
+  	<var name="DISABLE_SERVICES" value="" />
+    </subcomponent> 
+    
+    <subcomponent name="soaExternalEJBWebServiceConfig" class="com.oocl.csc.frm.bsf.service.policy.impl.FWRequestExecutionPolicyConfigComponent">
+  	<var name="ART_REQUIRED" value="true" readonly="true"/>
+  	<var name="AUTHENTICATION_REQUIRED" value="true" readonly="true"/>
+  	<var name="DISABLE_SERVICES" value="" />
+    </subcomponent> 
+    
+    <subcomponent name="soaRestfulResourceConfig" class="com.oocl.csc.frm.bsf.service.policy.impl.FWRequestExecutionPolicyConfigComponent">
+  	<var name="ART_REQUIRED" value="true" readonly="true"/>
+  	<var name="AUTHENTICATION_REQUIRED" value="true" readonly="true"/>
+  	<var name="DISABLE_SERVICES" value="" />
+    </subcomponent>
+    
+    <subcomponent name="fwCompressionFilterConfig" class="com.oocl.csc.frm.bsf.service.policy.impl.FWRequestExecutionPolicyConfigComponent">
+  	<var name="compressResponseBasedOnSize" value="true" />
+  	<var name="minimumCompressResponseSize" value="500000" /> <!-- 500k -->
+    </subcomponent>
+</Component>

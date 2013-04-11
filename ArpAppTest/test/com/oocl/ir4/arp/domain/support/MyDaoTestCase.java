@@ -22,6 +22,7 @@ public class MyDaoTestCase extends AbstractTransactionalJUnit4SpringContextTests
      */
     static {
         
+        
         System.setProperty("user.timezone", "Asia/Shanghai");
         // -Duser.timezone="Asia/Shanghai"
         System.setProperty("javax.xml.parsers.DocumentBuilderFactory",

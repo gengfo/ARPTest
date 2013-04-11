@@ -1,0 +1,22 @@
+<Component>
+
+    <subcomponent name="fwCompressionFilterConfig" class="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleSubConfigComponent">
+	  	<var name="compressResponseBasedOnSize" value="true" />
+	  	<var name="minimumCompressResponseSize" value="500000" /> <!-- 500k -->
+    </subcomponent>
+
+   	<subcomponent name="soaMapperConfig" class="com.oocl.csc.frm.soa.rest.provider.config.FWObjectMapperConfig">	
+		<var name="primaryAnnotationIntrospector"  value="org.codehaus.jackson.xc.JaxbAnnotationIntrospector"/>
+		<var name="secondaryAnnotationIntrospector"  value="org.codehaus.jackson.map.introspect.JacksonAnnotationIntrospector"/>
+
+		<!--
+			name prefix must be either "DeserializationConfig.Feature" or "SerializationConfig.Feature"
+		-->
+		<var name="DeserializationConfig.Feature.AUTO_DETECT_FIELDS"  value="true" /> 
+		<var name="SerializationConfig.Feature.AUTO_DETECT_FIELDS"  value="true" />
+	</subcomponent>
+	
+    <subcomponent name="fwSOARestfulExpceptionConfig" class="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleSubConfigComponent">
+  		<var name="showStackTrace" value="true" />
+    </subcomponent>
+</Component>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<import resource="biz-invoicematching-context.xml" />
+	<import resource="biz-suppdata-context.xml" />
+	
+	<bean id="ediHistoryDao" class="com.oocl.ir4.arp.dao.edi.impl.JpaEDIHistoryDao">
+    </bean>
+	
+	<bean id="supplierDao" class=" com.oocl.ir4.sppm.dao.supplier.impl.JpaSupplierDao">
+    </bean>
+    
+    <bean id="rejectedEDIInvoiceMatchDao" class="com.oocl.ir4.arp.dao.edi.impl.JpaRejectedEDIInvoiceMatchDao">
+    </bean>
+    
+	<bean id="rejEDIInvService" class="com.oocl.ir4.arp.service.edi.impl.DefaultRejectedEDIInvoiceMatchService">
+		 <property name="rejectedEDIInvoiceMatchDao" ref="rejectedEDIInvoiceMatchDao" />
+		 <property name="ediHistoryDao" ref="ediHistoryDao" />
+		 <property name="auditTrailService" ref="auditTrailService" />
+		 <property name="processor" ref="ediInvMatchProcessor" />
+		 <property name="ediHistoryService" ref="ediHistoryService" />
+	</bean>
+	
+	<bean id="ediHistoryService" class="com.oocl.ir4.arp.service.edi.impl.DefaultEDIHistoryService">
+		 <property name="ediHistoryDao" ref="ediHistoryDao" />
+		 <property name="rejectedEDIInvService" ref="rejEDIInvService" />
+	</bean>
+	
+	<bean id="supplierService" class="com.oocl.ir4.arp.service.invoicematching.impl.DefaultSupplierService">
+		 <property name="supplierDao" ref="supplierDao" />
+	</bean>
+	
+	<bean id="ediInvValidator" class="com.oocl.ir4.arp.service.edi.automatching.impl.EDIInvValidator">
+		 <property name="supplierService" ref="supplierService" />
+		 <property name="costCodeService" ref="costCodeService" />
+		 <property name="suppDataService" ref="suppDataService" />
+		 <property name="invMatchingService" ref="invoiceMatchingService" />
+	</bean>
+	
+	<bean id="ediInvMatchProcessor" class="com.oocl.ir4.arp.service.edi.automatching.impl.EDIInvMatchProcessor">
+		 <property name="ediHistoryService" ref="ediHistoryService" />
+		 <property name="invMatchService" ref="invoiceMatchingService" />
+		 <property name="rejectedEDIInvService" ref="rejEDIInvService" />
+		 <property name="auditTrailService" ref="auditTrailService" />
+		  <property name="organizationService" ref="orgService" />
+		 <property name="validator" ref="ediInvValidator" />
+		 <property name="mailService" ref="mailService" />
+	</bean>
+
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="auditTrailDao" class="com.oocl.ir4.arp.dao.audit.impl.JpaAuditTrailDao">
+	</bean>
+
+	<bean id="auditTrailService" class="com.oocl.ir4.arp.service.suppdata.audit.impl.DefaultAuditTrailService">
+		<property name="auditTrailDao" ref="auditTrailDao"/>
+		<property name="organizationService" ref="orgService" />
+		<property name="cargoSmartInterfaceService" ref="cargoSmartInterfaceService" />
+		<property name="currencyService" ref="currencyService" />
+		<property name="suppDataService" ref="suppDataService" />
+		
+	</bean>
+
+</beans>

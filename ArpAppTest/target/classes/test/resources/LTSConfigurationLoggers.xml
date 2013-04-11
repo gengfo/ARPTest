@@ -1,0 +1,14 @@
+<Component>
+	<!-- =================================================================== -->
+	<!--                LTSConfigurationLoggers							 -->
+	<!-- =================================================================== -->
+  <var name="LOG_ENABLED" value="true" /> 
+  <var name="FORCED_FATAL" value="false" /> 
+  <var name="LOG_ERROR" value="true" /> 
+  <var name="LOG_FATAL" value="true" /> 
+  <var name="LOG_INFO" value="true" /> 
+  <var name="LOG_WARNING" value="true" /> 
+  <var name="LOG_DEBUG" value="true" /> 
+  <var name="LOGGER_SPECIFIC_PROPERTIES_FILE" value="" /> 
+  
+</Component>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sender:senderConfig xmlns:sender="http://www.oocl.com/frm/mif/sender"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.oocl.com/frm/mif/mifSender.xsd">
+
+	<!-- sender:messages ***************** start -->
+	<sender:messages>
+		
+		<sender:message type="SEND_COST_STATUSCHANGE">
+			<sender:version value="ver1.0">
+				<sender:apps>
+					<sender:app id="ARP">
+						<sender:converter
+							class="com.oocl.frm.mif.sender.converter.impl.EmptySenderConverter">
+						</sender:converter>
+					</sender:app>
+				</sender:apps>
+			</sender:version>
+		</sender:message>
+		
+		<sender:message type="DashboardInterfaceType">
+			<sender:version value="ver1.0">
+				<sender:apps>
+					<sender:app id="ARP">
+						<sender:converter
+							class="com.oocl.frm.mif.sender.converter.impl.EmptySenderConverter">
+						</sender:converter>
+					</sender:app>
+				</sender:apps>
+			</sender:version>
+		</sender:message>
+		
+		<!--R3  cargo smart -->
+		<sender:message type="INV_COMMON_THREE_IN_ONE">
+			<sender:version value="ver1.0">
+				<sender:apps>
+					<sender:app id="ARP">
+						<sender:converter
+							class="com.oocl.frm.mif.sender.converter.impl.EmptySenderConverter">
+						</sender:converter>
+					</sender:app>
+				</sender:apps>
+			</sender:version>
+		</sender:message>
+		
+		<sender:message type="UPLOAD_INV_PDF">
+			<sender:version value="ver1.0">
+				<sender:apps>
+					<sender:app id="ARP">
+						<sender:converter
+							class="com.oocl.frm.mif.sender.converter.impl.EmptySenderConverter">
+						</sender:converter>
+					</sender:app>
+				</sender:apps>
+			</sender:version>
+		</sender:message>
+		
+	</sender:messages>
+
+	<sender:destinations>
+		
+		<sender:destination id="SPSCostItemUpdateMsgDestination">
+			<sender:messages>
+				<sender:message type="SEND_COST_STATUSCHANGE">
+					<sender:version value="ver1.0">
+						<sender:decorators>
+							<sender:decorator refId="jaxbXmlBeansJmsDecrator" />
+						</sender:decorators>
+						<sender:transporter
+							class="com.oocl.frm.mif.mf.sender.transporter.MFJMSSenderTransporterWithDefault">
+							<sender:params>
+								<sender:param key="destinationName" value="IR4.ARP.COST.STATUSCHANGETPC">
+								</sender:param>
+							</sender:params>
+						</sender:transporter>
+					</sender:version>
+				</sender:message>
+			</sender:messages>
+		</sender:destination>
+		
+		<sender:destination id="DashboardInterfaceDes">
+			<sender:messages>
+				<sender:message type="DashboardInterfaceType">
+					<sender:version value="ver1.0">
+						<sender:decorators>
+							<sender:decorator refId="stringToMFJmsSenderDecorator" />
+						</sender:decorators>
+						<sender:transporter class="com.oocl.frm.mif.mf.sender.transporter.MFJMSSenderTransporterWithDefault">
+							<sender:params>
+								<sender:param key="destinationName" value="CDRIVE.ARP.DSH.ACTPLNTPC">
+								</sender:param>
+							</sender:params>
+						</sender:transporter>
+					</sender:version>
+				</sender:message>
+			</sender:messages>
+		</sender:destination>
+		
+		<!--R3 cargo smart -->
+		<sender:destination id="CSInoviceDataMsgDestination">
+			<sender:messages>
+				<sender:message type="INV_COMMON_THREE_IN_ONE">
+					<sender:version value="ver1.0">
+						<sender:decorators>
+							<sender:decorator refId="jaxbXmlBeansJmsDecrator" />
+						</sender:decorators>
+						<sender:transporter
+							class="com.oocl.frm.mif.mf.sender.transporter.MFJMSSenderTransporterWithDefault">
+							<sender:params>
+								<sender:param key="destinationName" value="ARP.CS2.INVOICE.TPC">
+								</sender:param>
+							</sender:params>
+						</sender:transporter>
+					</sender:version>
+				</sender:message>
+			</sender:messages>
+		</sender:destination>
+		
+		<sender:destination id="CSInovicePDFMsgDestination">
+			<sender:messages>
+				<sender:message type="UPLOAD_INV_PDF">
+					<sender:version value="ver1.0">
+						<sender:decorators>
+							<sender:decorator refId="jaxbXmlBeansJmsDecrator" />
+						</sender:decorators>
+						<sender:transporter
+							class="com.oocl.frm.mif.mf.sender.transporter.MFJMSSenderTransporterWithDefault">
+							<sender:params>
+								<sender:param key="destinationName" value="ARP.CS2.INVOICE.PDF.TPC">
+								</sender:param>
+							</sender:params>
+						</sender:transporter>
+					</sender:version>
+				</sender:message>
+			</sender:messages>
+		</sender:destination>
+		
+	</sender:destinations>
+
+	<!-- sender:destinations ***************** end -->
+
+	<!-- sender:decorator ***************** start -->
+	
+	<sender:decorator id="jaxbXmlBeansJmsDecrator"
+		class="com.oocl.ir4.arp.frm.mfmif.msg.sender.decrator.DirectedJAXBXMLBeansToMFJmsSenderDecorator">
+	</sender:decorator>
+	
+	<sender:decorator id="stringToMFJmsSenderDecorator" class="com.oocl.ir4.arp.frm.mfmif.msg.sender.decrator.StringToMFJmsEnhancedHeadersSenderDecorator">
+	</sender:decorator>
+	
+	<!-- sender:decorator ***************** end -->
+	
+</sender:senderConfig>

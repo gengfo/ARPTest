@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<bpf-email-notification>
+    <name>BPF Email Notification</name>
+    <description>Defines the BPF email notification info</description>
+    <email>
+        <!-- ======================================= -->
+        <!-- There should be at least ONE from       -->
+        <!-- and ONE to								 -->
+        <!-- ======================================= -->
+        <from>forest.geng@oocl.com</from>
+        <to>able.li@oocl.com,andy.yang@oocl.com,duncan.wang@oocl.com,forest.geng@oocl.com,gaara.zhu@oocl.com,grapes.peng@oocl.com,jun.zhou@oocl.com,kelvin.li@oocl.com,matthew.yang@oocl.com,nero.lou@oocl.com,yinkan.li@oocl.com</to>
+    </email>
+</bpf-email-notification>

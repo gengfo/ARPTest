@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<bpf-worker>
+	<!-- ============================================================================================= -->
+	<!-- 1. If the BPFProcessor throws an unexpected exception (i.e., NOT BPFProcessingFailureExcepiton -->
+	<!-- BPF Worker will keep try max-retry times (not including the 1st time it is procesed).  In     -->
+	<!-- other words, if the max-retry 1, BPF Wortker will retry it 1 more time.  If it still fails,   -->
+	<!-- The request is marked as "retry_failed"													   -->
+	<!-- 2. f BPF's own logic has exception, it will keep retry forever 							   -->
+	<!-- ============================================================================================= -->
+
+	<request-processor-mappings>
+
+		<request>
+			<type>GeneratePDF</type>
+			<processor>com.oocl.ir4.arp.service.appinterface.GeneratePDFProcessor</processor>
+		</request>
+		
+		<request>
+			<type>Fax</type>
+			<processor>com.oocl.ir4.arp.service.appinterface.FaxInvProcessor</processor>
+		</request>
+		
+		<request>
+			<type>Email</type>
+			<processor>com.oocl.ir4.arp.service.appinterface.EmailInvProcessor</processor>
+		</request>
+		
+		<request>
+			<type>InvDataToCS</type>
+			<processor>com.oocl.ir4.arp.service.cargosmartinterface.impl.CSInvoiceDataProcessor</processor>
+		</request>
+
+		<request>
+			<type>InvAuditInfoToCS</type>
+			<processor>com.oocl.ir4.arp.service.cargosmartinterface.impl.CSInvoiceAuditInfoProcessor</processor>
+		</request>
+		
+		<request>
+			<type>InvPDFToCS</type>
+			<processor>com.oocl.ir4.arp.service.cargosmartinterface.impl.CSInvoicePDFProcessor</processor>
+		</request>
+		
+		<!-- start test purpose -->
+		<request>
+			<type>bpfDispatcherQueueType</type>
+			<processor>com.oocl.frm.bpf.server.worker.processor.BPFEndToEndMonitoringRequestProcessor</processor>
+		</request>
+		<!-- end  test purpose -->
+		
+	</request-processor-mappings>
+	
+	<!-- ================================================================================= -->
+	<!-- NO NEED TO CONFIGURE notification-queue ANY MORE because OTF is used              -->
+	<!-- ================================================================================= -->
+	<notification-queue>
+		<id>ARP.FWK.BPF.NOTIFICATION</id>
+		<msg-info>
+			<root_element>BPFNotification</root_element>
+			<name_space>BPFNotification</name_space>
+			<version_number>BPFNotification</version_number>
+		</msg-info>
+	</notification-queue>
+	<!--CONFIGURE exception-queue-->
+	<exception-queue>
+		<id>ARP.FWK.BPF.WORKEREXCEPTION</id>
+		<msg-info>
+			<root_element>BPFException</root_element>
+			<name_space>BPFException</name_space>
+			<version_number>BPFException</version_number>
+		</msg-info>
+	</exception-queue>
+	
+	<!-- ========================================================================= -->
+	<!-- NO NEED TO CONFIGURAE THIS ANY MORE         -->
+	<!-- 1.  Worker uses this to update status without joining CMT 		-->
+	<!-- 2.  It should NOT use ejb-location. Should use location     		-->
+	<!-- 3.  The part after &quot;env&quot; should match &lt;res-ref-name&gt; in ejb-jar.xml 	-->
+	<!-- ========================================================================= -->
+	<!--<data-source>java:comp/env/${bpf.worker.data.sourceForProcessing}</data-source>-->
+	<!-- ========================================================================= -->
+	<!-- MAX number of email notifcation to be sent per JVM start/end   -->
+	<!-- ========================================================================= -->
+	<max-email-notification>10</max-email-notification>
+	
+	<!-- ========================================================================= -->
+	<!-- NO NEED TO CONFIGURAE THIS ANY MORE         -->
+	<!-- 1.  Worker uses this to update status without joining CMT 		-->
+	<!-- 2.  It should NOT use ejb-location. Should use location     		-->
+	<!-- 3.  The part after &quot;env&quot; should match &lt;res-ref-name&gt; in ejb-jar.xml 	-->
+	<!-- ========================================================================= -->
+	<data-source>${bpf.worker.data.sourceForProcessing}</data-source>
+</bpf-worker>

@@ -10,6 +10,7 @@ public class AuditTrailDTOConvertorDataOM {
     public static AuditTrail createInvoiceAuditTrial() {
         AuditTrail at = new AuditTrail();
         
+        
         at.setBizKey("188");
         at.setClassName(AuditTrailConstants.CLASS_NAME_INVOIC);
         // skip field name/from/to to AuditDetail

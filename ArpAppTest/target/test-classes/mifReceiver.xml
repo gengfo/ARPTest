@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<receiver:receiverConfig
+	xmlns:receiver="http://www.oocl.com/frm/mif/receiver"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.oocl.com/frm/mif/receiver mifReceiver.xsd">
+	
+	<!-- messages ***************** start -->
+	<!-- cargo smart -->
+	<receiver:messages>
+	
+		<receiver:message type="InvoiceRequests">
+			<receiver:version value="ver1.0">
+				<receiver:app receiverId="ARP">
+					<receiver:decorators>
+						<receiver:decorator
+							class="com.oocl.frm.mif.mf.common.decorator.jaxb.MFToJAXBXmlBeansDecorator">
+							<receiver:params>
+								<receiver:param
+									key="xmlDocInterfaceName"
+									value="com.cargosmart.shipment.invoiceActivity.InvoiceActivityDocument" />
+							</receiver:params>
+						</receiver:decorator>
+					</receiver:decorators>
+					<receiver:converter
+						class="com.oocl.frm.mif.receiver.converter.impl.EmptyReceiverConverter">
+					</receiver:converter>
+					<receiver:processor
+						class="com.oocl.ir4.arp.csinterface.mif.receiver.InvoiceRequestMsgReceiver">
+					</receiver:processor>
+				</receiver:app>
+			</receiver:version>
+		</receiver:message>
+	
+		<receiver:message type="PaymentAdvise">
+			<receiver:version value="ver1.0">
+				<receiver:app receiverId="ARP">
+					<receiver:decorators>
+						<receiver:decorator
+							class="com.oocl.frm.mif.mf.common.decorator.jaxb.MFToJAXBXmlBeansDecorator">
+							<receiver:params>
+								<receiver:param
+									key="xmlDocInterfaceName"
+									value="noNamespace.PaymentAdviceDocument" />
+							</receiver:params>
+						</receiver:decorator>
+					</receiver:decorators>
+					<receiver:converter
+						class="com.oocl.frm.mif.receiver.converter.impl.EmptyReceiverConverter">
+					</receiver:converter>
+					<receiver:processor
+						class="com.oocl.ir4.arp.csinterface.mif.receiver.PaymentAdviceMsgReceiver">
+					</receiver:processor>
+				</receiver:app>
+			</receiver:version>
+		</receiver:message>
+	
+	</receiver:messages>
+	<!-- messages ***************** end -->
+
+	<!-- process ***************** start -->
+	<receiver:processes>
+
+		<receiver:process id="CS2.ARP.INVOICE.QUE">
+			<receiver:messageType>InvoiceRequests</receiver:messageType>
+			<receiver:messageVersion>ver1.0</receiver:messageVersion>
+			<receiver:receiverId>ARP</receiver:receiverId>
+		</receiver:process>
+		
+		<receiver:process id="CS2.ARP.PAYMENT.QUE">
+			<receiver:messageType>PaymentAdvise</receiver:messageType>
+			<receiver:messageVersion>ver1.0</receiver:messageVersion>
+			<receiver:receiverId>ARP</receiver:receiverId>
+		</receiver:process>
+		
+		
+	</receiver:processes>
+	
+	<!-- process ***************** end -->
+
+</receiver:receiverConfig>

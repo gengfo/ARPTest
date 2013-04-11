@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://com.oocl.frm.fode.schema.status/"
+			xmlns:fode="http://com.oocl.frm.fode.schema.status/">
+
+
+	<!-- Return Status -->
+	<xsd:element name="requestDeliveryStatus">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="requestUUID" type="xsd:string"/>
+				<xsd:element name="status" type="xsd:string"/>
+	                        <!-- Status is failure -->
+				<xsd:element name="errorMsg" type="xsd:string" minOccurs="0" nillable="true"/>
+	                        <!-- Status is success -->
+				<xsd:element name="reportURL" type="xsd:string" minOccurs="0" nillable="true"/>
+			    <xsd:element name="appCorrelationString" type="xsd:string" nillable="true" minOccurs="0"/>
+			    <xsd:element name="docsUUID" type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
+

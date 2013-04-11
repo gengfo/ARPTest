@@ -6,6 +6,8 @@ import com.oocl.ir4.arp.openservice.invadj.dto.InvoiceAdjustItemDTO;
 import com.oocl.ir4.arp.openservice.invadj.dto.InvoiceAdjustmentDTO;
 
 public class DefaultInvoiceAdjustmentOpenService4AddOM {
+    
+    
 
     public static InvoiceAdjustItemDTO setupInvoiceAdjustItemDTO() {
 

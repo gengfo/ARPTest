@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<Component>
+	<!-- key is the component name, value is the component class with full package path-->
+
+	<!--config components for SOA framework -->
+	<var name="soaServiceConfigurations" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>         
+	<var name="soaLoggerConfigurations" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>   
+	<var name="soaServiceAuditRecordConfigurations" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>    
+	<var name="soaInlineServiceConfigurations" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent" />      
+	<var name="soaHeartbeatFileConfigurations" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent" />
+	<var name="soaProxyConfigurations" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent" />
+	<var name="soaGeneralConfigurations"  value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent" />
+
+	<!-- FIL Configuration -->
+	<var name="filDebugLoggers" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/> 
+	<var name="filMessageLoggers" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/> 
+	<var name="filConfigurations" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/> 
+	<var name="filEmailNotifiers" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/> 
+	<var name="filExceptionLoggers" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/> 
+	
+	<!--BPF -->
+	<var name="bpfNotificationLoggers" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/> 
+	<var name="bpfWorkerLoggers" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/> 
+	<var name="bpfLoggers" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/> 	
+	<var name="PICConfig" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>    
+	
+	<!-- ART Configuration -->
+	<var name="artConfig" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>
+	<var name="arpAppConfig" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>
+
+	<!-- JPA Transaction Framework Configuration -->
+	<var name="jpaTxnConfig" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>
+
+
+	<!-- Persistence Framework Configuration -->
+	<var name="persistenceConfig" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>    
+	
+	<var name="ssoConfig" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>
+	<var name="authAgentConfig" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>
+
+	<!-- Query Cache configuration -->
+	<var name="queryCacheConfig" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>
+	
+	<!-- TIR -->
+	<var name="TIRLoggers" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent" />
+	
+	<!-- LTS -->
+	<var name="LTSScheduleTaskLoggers" value="com.oocl.csc.frm.integration.logger.impl.FWLoggerConfigComponent"/>
+	<var name="LTSConfiguration" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/> 
+	<var name="LTSConfigurationLoggers" value="com.oocl.csc.frm.integration.logger.impl.FWLoggerConfigComponent"/>
+	<var name="LTSAgentSideLoggers" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent" />
+	<var name="notifierDefaultControllableConfig" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/> 
+	<var name="filExceptionEmailNotifier" value="com.oocl.csc.frm.integration.notifier.email.impl.FWEmailNotifierConfigComponent"/> 
+	
+	<!-- mf/mif -->
+	<var name="transactionConfig" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>
+	<var name="mfLoggers" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>
+	<var name="mifLoggers" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent" />
+	
+	<!-- CPFW -->
+	<var name="cpfwConfig" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>
+	<var name="cpfwLoggers" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>	
+	
+	<!-- FODE -->
+	<var name="FODEClientConfig" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/>
+	<var name="bpfLoggers" value="com.oocl.csc.frm.integration.configurator.impl.FWBaseSimpleConfigComponent"/> 	
+
+</Component>
