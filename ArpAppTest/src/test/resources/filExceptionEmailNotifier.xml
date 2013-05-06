@@ -1,9 +1,0 @@
-<Component>
-      <var name="SMTP_HOST" value="testsmtp1" />
-      <var name="SMTP_PORT" value="25" />
-      <var name="EMAIL_ENABLED" value="false" />
-      <var name="AUTO_REDIRECT_EMAIL_ENABLED" value="false" />
-      <var name="REDIRECT_EMAIL_ADDRESSES" value="forest.geng@oocl.com"/>
-      <var name="AUTO_BCC_ENABLED" value="true" />
-      <var name="BCC_EMAIL_ADDRESSES" value="forest.geng@oocl.com" />
-</Component>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Component xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<var value="D:/ToShare/arp-iris4/ARP_APP_Server/arpServer/logs/soa/FWVtmServicePortTypeImpl.txt" name="com.oocl.ir4.ss.service.soap.vtm.FWVtmServicePortTypeImpl"/>
-	<var value="D:/ToShare/arp-iris4/ARP_APP_Server/arpServer/logs/soa/FWOrderServicePortTypeImpl.txt" name="com.oocl.ir4.ss.service.soap.order.FWOrderServicePortTypeImpl"/>
-	<var value="D:/ToShare/arp-iris4/ARP_APP_Server/arpServer/logs/soa/FWTpServicePortTypeImpl.txt" name="com.oocl.ir4.ss.service.soap.tp.FWTpServicePortTypeImpl"/>
-	<var value="D:/ToShare/arp-iris4/ARP_APP_Server/arpServer/logs/soa/FWSOALabRSImpl.txt" name="com.oocl.ir4.arp.web.restful.rule.GetOfficeSettingRestfulService"/>
-</Component>
